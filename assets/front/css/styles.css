@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: transparent;
+  margin: 0;
+  font-size: 16px;
+  text-shadow: 0 1px 2px #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 1140px;
+  max-width: 80%;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  padding: 0 20px;
+}
+
+header a {
+  margin-right: 40px;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 145px;
+ 
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.nav-links a {
+  color: #ffffff; /* Daha koyu renk yazı */
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s; /* Arka plan ve yazı rengindeki geçişler */
+}
+
+.nav-links a:hover {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1); /* Hover durumda arka plan rengi */
+  color: #000; /* Hover durumda yazı rengini koyulaştırma */
+}
+
+.icon-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto;
+  padding: inherit;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  color: #871cd3; /* İkon rengini koyu gri yapar */
+  background-color: #f0f0f0; /* İkonların arka plan rengini açık gri yapar */
+  border-radius: 50%; /* İkon butonlarının köşelerini yuvarlatır */
+  transition: background-color 0.3s;
+  margin: 0; /* Margin değerlerini sıfırlar, dengesiz boşlukları önler */
+}
+
+.icon-btn:hover {
+  background-color: #e0e0e0; /* Hover durumunda arka plan rengini daha koyu gri yapar */
+}
+
+.icon-btn i {
+  font-size: 20px; /* İkon boyutunu 20px yapar */
+}
+
+.site-header__cart {
+  position: relative;
+}
+
+.site-header__cart::after {
+  content: attr(data-count);
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red; /* İçerik için arka plan rengini kırmızı yapar */
+  color: white; /* İçerik rengini beyaz yapar */
+  font-size: 12px; /* İçerik yazı boyutunu 12px yapar */
+  width: 20px; /* İçeriğin genişliğini 20px yapar */
+  height: 20px; /* İçeriğin yüksekliğini 20px yapar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* İçeriğin köşelerini tamamen yuvarlatır */
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-form {
+  display: none; /* Başlangıçta formu gizle */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff; /* Form arka plan rengi */
+  border: 1px solid #ddd; /* Form kenar çizgisi */
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Hafif gölge efekti */
+  z-index: 1000; /* Diğer elementlerin üzerinde görünmesini sağlar */
+  width: 200px; /* Form genişliği */
+}
+
+.search-container.active .search-form {
+  display: flex; /* Tıklanınca formu göster */
+}
+
+.search-form input {
+  flex: 1; /* Input alanının genişlemesini sağlar */
+}
+
+.search-form button {
+  margin-left: 5px; /* Buton ve input arasına boşluk bırakır */
+}
+
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  color: #871cd3; /* İkon rengini koyu gri yapar */
+  background-color: #f0f0f0; /* İkonların arka plan rengini açık gri yapar */
+  border-radius: 50%; /* İkon butonlarının köşelerini yuvarlatır */
+  transition: background-color 0.3s; /* Hover durumunda arka plan renginin değişimini pürüzsüz yapar */
+}
+
+.icon-btn:hover {
+  background-color: #e0e0e0; /* Hover durumunda arka plan rengini daha koyu gri yapar */
+}
+
+.icon-btn i {
+  font-size: 20px; /* İkon boyutunu 20px yapar */
+}
+
+
+/* Carousel */
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -50px;
+  position: relative;
+}
+
+.carousel .list .item {
+  position: absolute;
+  inset: 0 0 0 0;
+}
+
+.carousel .list .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel .list .item .content {
+  position: absolute;
+  top: 20%;
+  width: 1140px;
+  max-width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-right: 30%;
+  box-sizing: border-box;
+  color: white;
+  text-shadow: 0 5px 10px #871cd3;
+}
+
+.carousel .list .item .content .author {
+  font-weight: bold;
+  letter-spacing: 10px;
+}
+
+.carousel .list .item .content .title,
+.carousel .list .item .content .topic {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.em;
+}
+
+.carousel .list .item .content .topic {
+  color: #871cd3;
+}
+
+.carousel .list .item .content .buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  grid-template-rows: 40px;
+  gap: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.carousel .list .item .content button {
+  border: none;
+  background-color: #eee;
+  color: #871cd3;
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+}
+
+.carousel .list .item .content button:nth-child(2) {
+
+  color: #871cd3;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+/*thumbnail*/
+.thumbnail {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+}
+
+.thumbnail .item {
+  width: 150px;
+  height: 220px;
+  flex-shrink: 0;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.thumbnail .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.thumbnail .item .content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+.thumbnail .item .content .title {
+  font-weight: bold;
+
+}
+
+/*arrows*/
+.arrows {
+  position: absolute;
+  top: 50%;
+  right: 120%;
+  width: 200px;
+  max-width: 30%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.arrows button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #871cd3;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  transition: .5s;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.arrows button:hover {
+  background-color: rgba(255, 249, 249, 0.8);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.carousel .list .item:nth-child(1) {
+  z-index: 1;
+}
+
+.carousel .list .item:nth-child(1) .author,
+.carousel .list .item:nth-child(1) .title,
+.carousel .list .item:nth-child(1) .topic,
+.carousel .list .item:nth-child(1) .des,
+.carousel .list .item:nth-child(1) .buttons {
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.carousel .list .item:nth-child(1) .title {
+  animation-delay: 1.2s;
+}
+
+.carousel .list .item:nth-child(1) .topic {
+  animation-delay: 1.4s;
+}
+
+.carousel .list .item:nth-child(1) .des {
+  animation-delay: 1.6s;
+}
+
+.carousel .list .item:nth-child(1) .buttons {
+  animation-delay: 1.8s;
+}
+
+/*effect next click*/
+.carousel.next .list .item:nth-child(1) img {
+  width: 150px;
+  height: 220px;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  border-radius: 20px;
+  animation: showImage 0.5s linear 1 forwards;
+}
+
+@keyframes showImage {
+  to {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1) {
+  width: 0;
+  overflow: hidden;
+  animation: showThumbnail .5s linear 1 forwards;
+}
+
+@keyframes showThumbnail {
+  to {
+    width: 150px;
+  }
+}
+
+.carousel.next .thumbnail {
+  transform: translateX(150px);
+  animation: transformThumbnail .5s linear 1 forwards;
+}
+
+@keyframes transformThumbnail {
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* effect prev click */
+.carousel.prev .list .item:nth-child(2) {
+  z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: outImage 0.5s linear 1 forwards;
+}
+
+@keyframes outImage {
+  to {
+    width: 150px;
+    height: 220px;
+    border-radius: 20px;
+    left: 50%;
+    bottom: 50px;
+  }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1) {
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.carousel.prev .list .item:nth-child(2) .author,
+.carousel.prev .list .item:nth-child(2) .title,
+.carousel.prev .list .item:nth-child(2) .topic,
+.carousel.prev .list .item:nth-child(2) .des,
+.carousel.prev .list .item:nth-child(2) .buttons {
+  animation: contentOut 1.5s linear 1 forwards;
+}
+
+@keyframes contentOut {
+  to {
+    transform: translateY(-150px);
+    filter: blur(20px);
+    opacity: 0;
+  }
+}
+
+.carousel.next .arrows button,
+.carousel.prev .arrows button {
+  pointer-events: none;
+}
+
+/*time*/
+.time {
+  width: 0%;
+  height: 5px;
+  background-color: #871cd3;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time {
+  width: 100%;
+  animation: timeRunning 2s linear 1 forwards;
+}
+
+@keyframes timeRunning {
+  to {
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .carousel .list .item .content {
+    padding-right: 0;
+  }
+
+  .carousel .list .item .content .title {
+    font-size: 30px;
+  }
+}
+/*footer*/
+footer {
+  background-color: #871cd3; /* Footer arka plan rengi */
+  color: #fff; /* Yazı rengi */
+  padding: 40px 20px; /* İç boşluk */
+  text-align: center; /* Metni ortalar */
+}
+
+.footer-container {
+  max-width: 1400px; /* Maksimum genişlik */
+  margin: auto; /* Ortalar */
+  display: flex; /* Flexbox kullanır */
+  flex-wrap: wrap; /* Satır içindeki öğelerin satır sonlarına taşmasını sağlar */
+  gap: 20px; /* Öğeler arasındaki boşluk */
+  justify-content: space-between; /* Öğeleri aralar */
+}
+
+.footer-logo, .footer-links, .newsletter-signup, .store-information {
+  flex: 2; /* Öğelere eşit genişlik verir */
+  min-width: 200px; /* Minimum genişlik */
+}
+
+.footer-logo {
+  margin-bottom: 0; /* Alt boşluk kaldırıldı */
+}
+
+.footer-logo h1 {
+  margin: 0;
+  font-size: 24px; /* Logo başlığı boyutu */
+}
+
+.footer-logo p {
+  font-size: 14px; /* Açıklama yazısının boyutu */
+}
+
+.footer-links h2, .newsletter-signup h2, .store-information h2 {
+  font-size: 18px; /* Başlık boyutu */
+  margin-bottom: 10px; /* Alt boşluk */
+}
+
+.social-links {
+  margin-top: 10px; /* Üst boşluk */
+}
+
+.social-icon {
+  color: #fff; /* Sosyal medya simgelerinin rengi */
+  margin: 0 10px; /* Sol ve sağ boşluk */
+  font-size: 20px; /* İkon boyutu */
+  text-decoration: none; /* Altını çizili kaldırır */
+}
+
+.social-icon:hover {
+  color: #ccc; /* Üzerine gelindiğinde renk değişimi */
+}
+
+.newsletter-signup form {
+  display: flex; /* Flexbox kullanarak düzenler */
+  justify-content: center; /* Ortalar */
+  gap: 10px; /* Boşluk */
+  margin: 14px 0; /* Üst ve alt boşluk */
+}
+
+.newsletter-signup input[type="email"] {
+  padding: 10px; /* İç boşluk */
+  border: none; /* Kenar çizgisi yok */
+  border-radius: 5px; /* Kenarları yuvarlatır */
+}
+
+.newsletter-signup button {
+  padding: 10px 20px; /* İç boşluk */
+  border: none; /* Kenar çizgisi yok */
+  background-color: #ff5722; /* Arka plan rengi */
+  color: #fff; /* Yazı rengi */
+  border-radius: 5px; /* Kenarları yuvarlatır */
+  cursor: pointer; /* İmleci el işaretine dönüştürür */
+}
+
+.newsletter-signup button:hover {
+  background-color: #e64a19; /* Üzerine gelindiğinde arka plan rengini değiştirir */
+}
+
+.store-information p {
+  margin: 5px 0; /* Üst ve alt boşluk */
+}
+
+.store-information a {
+  color: #fff; /* Bağlantı rengi */
+  text-decoration: none; /* Altını çizili kaldırır */
+}
+
+.store-information a:hover {
+  text-decoration: underline; /* Üzerine gelindiğinde altını çizer */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7c5ee;
+}
+.testimonial {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  padding: 50px 0;
+  overflow: hidden;
+}
+.testimonial .image {
+  height: 170px;
+  width: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.testimonial .slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 30px;
+  height: 100%;
+  width: 100%;
+}
+.slide p {
+  text-align: center;
+  padding: 0 160px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+.slide .quote-icon {
+  font-size: 30px;
+  color: #4070f4;
+}
+.slide .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.details .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+.details .job {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+}
+/* swiper button css */
+.nav-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transform: translateY(30px);
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.nav-btn::after,
+.nav-btn::before {
+  font-size: 20px;
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.swiper-pagination-bullet-active {
+  background-color: #4070f4;
+}
+@media screen and (max-width: 768px) {
+  .slide p {
+    padding: 0 20px;
+  }
+  .nav-btn {
+    display: none;
+  }
+}

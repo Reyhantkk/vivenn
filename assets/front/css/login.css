@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #871cd3;
+  margin: 0;
+  font-size: 16px;
+  text-shadow: 0 1px 2px #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 1140px;
+  max-width: 80%;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  padding: 0 20px;
+}
+
+header a {
+  margin-right: 40px;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 145px;
+ 
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.nav-links a {
+  color: #ffffff; /* Daha koyu renk yazı */
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s; /* Arka plan ve yazı rengindeki geçişler */
+}
+
+.nav-links a:hover {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1); /* Hover durumda arka plan rengi */
+  color: #000; /* Hover durumda yazı rengini koyulaştırma */
+}
+
+.icon-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto;
+  padding: inherit;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  color: #871cd3; /* İkon rengini koyu gri yapar */
+  background-color: #f0f0f0; /* İkonların arka plan rengini açık gri yapar */
+  border-radius: 50%; /* İkon butonlarının köşelerini yuvarlatır */
+  transition: background-color 0.3s;
+  margin: 0; /* Margin değerlerini sıfırlar, dengesiz boşlukları önler */
+}
+
+.icon-btn:hover {
+  background-color: #e0e0e0; /* Hover durumunda arka plan rengini daha koyu gri yapar */
+}
+
+.icon-btn i {
+  font-size: 20px; /* İkon boyutunu 20px yapar */
+}
+
+.site-header__cart {
+  position: relative;
+}
+
+.site-header__cart::after {
+  content: attr(data-count);
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red; /* İçerik için arka plan rengini kırmızı yapar */
+  color: white; /* İçerik rengini beyaz yapar */
+  font-size: 12px; /* İçerik yazı boyutunu 12px yapar */
+  width: 20px; /* İçeriğin genişliğini 20px yapar */
+  height: 20px; /* İçeriğin yüksekliğini 20px yapar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* İçeriğin köşelerini tamamen yuvarlatır */
+}
+
+.search_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: #333; /* İkon rengini koyu gri yapar */
+  font-size: 20px; /* İkon boyutunu 20px yapar */
+}
+
+.search_icon::before {
+  content: "\f002"; /* Font Awesome arama ikonunu ekler */
+  font-family: 'Font Awesome 5 Free'; /* Font Awesome ailesini kullanır */
+  font-weight: 900; /* Font ağırlığını kalın yapar */
+}
+
+
+body,input{
+    font-family: 'poppins', sans-serif;
+}
+
+.container{
+   position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(250, 253, 255);
+    overflow: hidden;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, #871cd3, #871cd3);
+    top: -10%;
+    right: 48%;
+    transform: translateY(-50%);
+    z-index: 6;
+    transition: 1.8s ease-in-out;
+  
+}
+
+.forms-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+ 
+}
+ 
+.forms-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.signin-signup{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 75%;
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+    transition: 1s .7s ease-in-out;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 0 5rem;
+    overflow: hidden;
+    transition: 0.2s 0.7s ease-in-out;
+}
+
+form.sign-in-form{
+    z-index: 2;
+}
+
+form.sign-up-form{
+    z-index: 1;
+    opacity: 0;
+}
+
+.title{
+    font-size: 2.5rem;
+    color: #0e0906;
+    margin-bottom: 10px;
+}
+
+.input-field{
+    max-width: 380px;
+    width: 100%;
+    height: 55px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 17% 85%;
+    padding: 0 0.4rem;
+}
+
+.input-field i{
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    font-size: 1.1rem;
+}
+
+.input-field input{
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #871cd3;
+}
+
+.input-field input::placeholder{
+    color: #aaa;
+    font-weight: 500;
+}
+
+.btn{
+    width: 150px;
+    height: 49px;
+    border: none;
+    outline: none;
+    background-color: #871cd3;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 49px;
+    transition: .5s;
+}
+
+.btn:hover{
+    background-color: #871cd3;
+}
+
+.social-text{
+    padding: 0.7rem 0;
+    font-size: 1rem;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon{
+    height: 46px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.45rem;
+    color: #871cd3;
+    border-radius: 50%;
+    border: 2px solid #871cd3;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: .3s;
+}
+
+.social-icon:hover{
+    color: #871cd3;
+    border-color: #871cd3;
+}
+
+.panels-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    text-align: center;
+    z-index: 7;
+  
+}
+
+.left-panel{
+    pointer-events: all;
+    padding: 3rem 17% 2rem 12%;
+}
+
+.right-panel{
+    pointer-events: none;
+    padding: 3rem 12% 2rem 17%;
+}
+.panel .content{
+    color: #fdfdfd;
+    transition: .9s .6s ease-in-out;
+}
+
+.panel h3{
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+
+.panel p{
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
+}
+.btn.transparent{
+    margin: 0;
+    background: none;
+    border: 2px solid #d6d0cc;
+    width: 130px;
+    height: 41px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.image{
+    width: 100%;
+    transition: 1.1s .4s ease-in-out;   
+}
+
+.right-panel .content, .right-panel .image{
+    transform: translateX(800px);
+}
+
+/* ANIMATION */
+.container.sign-up-mode::before{
+    transform: translate(100%, -50%);
+    right: 52%;
+}
+
+.container.sign-up-mode .left-panel .image,
+.container.sign-up-mode .left-panel .content{
+    transform: translateX(-800px);
+}
+
+.container.sign-up-mode form.sign-up-form{
+    opacity: 1;
+    z-index: 2;
+}
+
+.container.sign-up-mode form.sign-in-form{
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.sign-up-mode .right-panel .image,
+.container.sign-up-mode .right-panel .content{
+    transform: translateX(0px);
+}
+
+.container.sign-up-mode .left-panel{
+    pointer-events: none;
+}
+
+.container.sign-up-mode .right-panel{
+    pointer-events: all;
+}
+
+.container.sign-up-mode .signin-signup{
+    left: 25%;
+}
+
+.container.sign-up-mode form.sign-in-form{
+    z-index: 1;
+    opacity: 0;
+}
+
+.container.sign-up-mode form.sign-up-form{
+    z-index: 2;
+    opacity: 1;
+}
+
+@media screen and (max-width: 870px) {
+    .container {
+        min-height: 800px;
+        height: 100vh;
+    }
+
+    .container:before {
+        width: 1500px;
+        height: 1500px;
+        left: 30%;
+        bottom: 68%;
+        transform: translateX(-50%);
+        right: initial;
+        top: initial;
+        transition: 2s ease-in-out;
+    }
+
+    .signin-signup {
+        width: 100%;
+        left: 50%;
+        top: 95%;
+        transform: translate(-50%, -100%);
+        transition: 1s .8s ease-in-out;
+    }
+
+    .panels-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+    }
+
+    .panel {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2.5rem 8%;
+    }
+
+    .panel .content {
+        padding-right: 15%;
+        transition: 0.9s 0.8s ease-in-out;
+    }
+
+    .panel h3 {
+        font-size: 1.2rem;
+    }
+
+    .panel p {
+        font-size: 0.7rem;
+        padding: 0.5rem 0;
+    }
+
+    .btn.transparent {
+        width: 110px;
+        height: 35px;
+        font-size: 0.7rem;
+    }
+
+    .image {
+        width: 200px;
+        transition: .9s .6s ease-in-out;
+    }
+
+    .left-panel {
+        grid-row: 1 / 2;
+    }
+
+    .right-panel {
+        grid-row: 3 / 4;
+    }
+
+    .right-panel .content, 
+    .right-panel .image {
+        transform: translateY(300px);
+    }
+
+    .container.sign-up-mode:before {
+        bottom: 32%;
+        right: initial;
+        transform: translate(-50%, 100%);
+    }
+
+    .container.sign-up-mode .left-panel .image,
+    .container.sign-up-mode .left-panel .content {
+        transform: translateY(-300px);
+    }
+
+    .container.sign-up-mode .signin-signup {
+        top: 5%;
+        transform: translate(-50%, 0);
+        left: 50%;
+    }
+}
+
+@media (max-width: 570px) {
+    form {
+        padding: 0 1.5rem;
+    }
+
+    .image {
+        display: none;
+    }
+    .panel .content {
+        padding: 0.5rem 1rem;
+    }
+
+   .container:before{
+    bottom: 72%;
+    left: 50%;
+   }
+       .container.sign-up-mode:before {
+            bottom: 28%;
+            left: 50%;
+        }
+   }
