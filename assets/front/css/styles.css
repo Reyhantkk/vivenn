@@ -28,23 +28,26 @@ header {
 header a {
   margin-right: 40px;
 }
-
-
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Logo ve bağlantılar arasındaki boşluğu eşit olarak dağıtır */
   align-items: center;
-  padding: 25px 145px;
- 
+  width: 100%;
 }
 
+/* Logo Stili */
+.logo {
+  height: 191px; /* Logonun yüksekliğini artırdık */
+  width: auto; /* Genişliği otomatik yaparak yüksekliği korur */
+}
+/* Menü Bağlantıları */
 .nav-links {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex: 1;
+  gap: 15px; /* Bağlantılar arasında boşluk bırakır */
+  margin: 0 auto; /* Bağlantıları ortalar */
 }
 
+/* Menü Bağlantıları Stili */
 .nav-links a {
   color: #ffffff; /* Daha koyu renk yazı */
   text-decoration: none;
@@ -52,10 +55,18 @@ header a {
   transition: background-color 0.3s, color 0.3s; /* Arka plan ve yazı rengindeki geçişler */
 }
 
+/* Menü Bağlantıları Hover Stili */
 .nav-links a:hover {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.1); /* Hover durumda arka plan rengi */
   color: #000; /* Hover durumda yazı rengini koyulaştırma */
+}
+
+/* İkon Butonları */
+.icon-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .icon-buttons {
