@@ -419,9 +419,24 @@ form.sign-up-form {
 @media screen and (max-width: 870px) {
     .container {
         min-height: 800px;
-        height: 100vh;
+        height: 92vh;
+    }
+    .logo {
+        height: 150px; /* Logo yüksekliğini azalt */
+    }
+    .navbar {
+        flex-direction: column; /* Menü ve ikon butonlarını dikey olarak hizalar */
+        align-items: flex-start; /* Menü bağlantılarını sola hizalar */
     }
 
+    .nav-links {
+        flex-direction: column; /* Menü bağlantılarını dikey hizalar */
+        gap: 10px; /* Bağlantılar arasındaki boşluğu azaltır */
+        width: 100%; /* Menü bağlantılarını tam genişlik yapar */
+        margin-top: 10px; /* Menü bağlantılarının üstünde biraz boşluk bırakır */
+    }
+
+    
     .container:before {
         width: 1500px;
         height: 1500px;
@@ -513,6 +528,9 @@ form.sign-up-form {
     form {
         padding: 0 1.5rem;
     }
+    .logo {
+        height: 120px; /* Mobil ekranlarda logonun yüksekliğini daha da azalt */
+    }
 
     .image {
         display: none;
@@ -531,4 +549,16 @@ form.sign-up-form {
         bottom: 28%;
         left: 50%;
     }
+    navbar {
+        flex-direction: column; /* Menü ve ikon butonlarını dikey olarak hizalar */
+        align-items: center; /* Menü bağlantılarını ortalar */
+    }
+
+    .nav-links {
+        width: 100%; /* Menü bağlantılarını tam genişlik yapar */
+        text-align: center; /* Menü bağlantılarını merkezler */
+        gap: 8px; /* Bağlantılar arasındaki boşluğu azaltır */
+    }
+
+  
 }
