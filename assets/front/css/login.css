@@ -7,7 +7,6 @@ body {
     font-size: 16px;
     text-shadow: 0 1px 2px #ffffff;
     overflow-x: hidden;
-
 }
 
 a {
@@ -18,7 +17,7 @@ header {
     width: 1140px;
     max-width: 80%;
     margin: auto;
-    height: 50px;
+    height: 80px; /* Header yüksekliğini artırdık */
     display: flex;
     align-items: center;
     position: relative;
@@ -30,39 +29,42 @@ header a {
     margin-right: 40px;
 }
 
+/* Logo Stili */
+.logo {
+    height: 191px; /* Logonun yüksekliğini artırdık */
+    width: auto; /* Genişliği otomatik yaparak orantıyı korur */
+}
 
+/* Navbar Stili */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 145px;
-
+    width: 100%;
 }
 
+/* Menü Bağlantıları */
 .nav-links {
     display: flex;
-    justify-content: center;
     gap: 15px;
-    flex: 1;
+    flex: 1; /* Menü bağlantılarının ortada hizalanmasını sağlar */
 }
 
+/* Menü Bağlantıları Linkleri */
 .nav-links a {
     color: #ffffff;
-    /* Daha koyu renk yazı */
     text-decoration: none;
     padding: 10px 15px;
     transition: background-color 0.3s, color 0.3s;
-    /* Arka plan ve yazı rengindeki geçişler */
 }
 
 .nav-links a:hover {
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.1);
-    /* Hover durumda arka plan rengi */
     color: #000;
-    /* Hover durumda yazı rengini koyulaştırma */
 }
 
+/* İkon Butonları */
 .icon-buttons {
     display: flex;
     gap: 10px;
@@ -80,24 +82,18 @@ header a {
     border: none;
     cursor: pointer;
     color: #871cd3;
-    /* İkon rengini koyu gri yapar */
     background-color: #f0f0f0;
-    /* İkonların arka plan rengini açık gri yapar */
     border-radius: 50%;
-    /* İkon butonlarının köşelerini yuvarlatır */
     transition: background-color 0.3s;
     margin: 0;
-    /* Margin değerlerini sıfırlar, dengesiz boşlukları önler */
 }
 
 .icon-btn:hover {
     background-color: #e0e0e0;
-    /* Hover durumunda arka plan rengini daha koyu gri yapar */
 }
 
 .icon-btn i {
     font-size: 20px;
-    /* İkon boyutunu 20px yapar */
 }
 
 .site-header__cart {
@@ -110,20 +106,14 @@ header a {
     top: -5px;
     right: -10px;
     background: red;
-    /* İçerik için arka plan rengini kırmızı yapar */
     color: white;
-    /* İçerik rengini beyaz yapar */
     font-size: 12px;
-    /* İçerik yazı boyutunu 12px yapar */
     width: 20px;
-    /* İçeriğin genişliğini 20px yapar */
     height: 20px;
-    /* İçeriğin yüksekliğini 20px yapar */
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    /* İçeriğin köşelerini tamamen yuvarlatır */
 }
 
 .search_icon {
@@ -134,18 +124,13 @@ header a {
     height: 40px;
     cursor: pointer;
     color: #333;
-    /* İkon rengini koyu gri yapar */
     font-size: 20px;
-    /* İkon boyutunu 20px yapar */
 }
 
 .search_icon::before {
     content: "\f002";
-    /* Font Awesome arama ikonunu ekler */
     font-family: 'Font Awesome 5 Free';
-    /* Font Awesome ailesini kullanır */
     font-weight: 900;
-    /* Font ağırlığını kalın yapar */
 }
 
 
