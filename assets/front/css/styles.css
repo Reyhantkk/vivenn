@@ -155,7 +155,12 @@ header .menu {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  margin-top: -50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
   position: relative;
 }
 
