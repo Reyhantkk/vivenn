@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial;
+  html, body {
+    overflow-x: hidden;
+  }
 }
 
 body {
@@ -29,7 +32,6 @@ header {
 }
 
 i {
-  color: #000000;
   cursor: pointer;
 }
 
@@ -56,9 +58,9 @@ header .search-box {
   height: 40px;
   border: none;
   outline: none;
-  background: #bd6c6c;
+
   border-radius: 30px;
-  color: rgb(255, 255, 255);
+  color: rgb(82, 64, 64);
   font-size: 16px;
   padding-left: 10px;
   padding-right: 50px; /* Arama butonunun daha rahat yerleşmesini sağlar */
@@ -68,16 +70,16 @@ header .search-box {
 
 .search-box button {
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 41px;
   border-radius: 30px;
   border: none;
   position: absolute;
-  top: 50%;
-  right: 10px; /* Butonu input'un içine doğru hizalar */
+  top: 51%;
+  right: 0px; /* Butonu input'un içine doğru hizalar */
   transform: translateY(-50%); /* Butonu dikeyde ortalar */
  
-  color: #fff;
+  color: #f8a3a3;
 }
 
 header ul {
@@ -92,7 +94,7 @@ header ul li {
 
 header ul li a {
   text-decoration: none;
-  color: #5a1e1e;
+  color: #f1f1f1;
   font-weight: 600;
   text-transform: uppercase;
   padding: 10px 15px;
@@ -269,7 +271,7 @@ header .menu {
 .arrows {
   position: absolute;
   top: 50%;
-  right: 120%;
+  right: 95%;
   width: 200px;
   max-width: 30%;
   display: flex;
@@ -559,6 +561,7 @@ footer {
 
 
 * {
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;

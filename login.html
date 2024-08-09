@@ -19,31 +19,35 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <img src="assets/front/images/logo.svg" alt="Logo" class="logo">
-            <div class="nav-links">
-                <a href="index.html">Anasayfa</a>
-                <a href="#">Ürünlerimiz</a>
-                <a href="#">Hakkımızda</a>
-                <a href="#">Lisanlarımız</a>
-                <a href="#">İletişim</a>
-            </div>
-            <div class="icon-buttons">
-                <!-- Search Button -->
-                <button class="icon-btn">
-                    <i class="fas fa-search"></i>
-                </button>
-                <!-- Profile Icon -->
-                <a href="login.html"  class="icon-btn">
-                    <i class="fas fa-user"></i>
-                </a>
+        <input type="checkbox" id="chk1">
+        <div class="logo">
+            <img src="assets/front/images/logo.svg" alt="Web Master Logo">
+        </div>
 
-                <!-- Shopping Cart Icon -->
-                <button class="icon-btn site-header__cart" data-count="0">
-                    <i class="fas fa-shopping-cart"></i>
-                </button>
-            </div>
-        </nav>
+        <div class="search-box">
+            <form>
+                <input type="text" name="search" id="srch" placeholder="Search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+                <a href="#"><i class="fa fa-shopping-cart cart-icon"></i></a>
+                <a href="login.html"><i class="fa fa-user user-icon"></i></a>
+
+            </li>
+        </ul>
+
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
     </header>
     
 </body>
