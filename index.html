@@ -13,7 +13,8 @@
 
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Custom CSS -->
@@ -22,293 +23,290 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <img src="assets/front/images/logo.svg" alt="Logo" class="logo">
-            <div class="nav-links">
-                <a href="index.html">Anasayfa</a>
-                <a href="#">Ürünlerimiz</a>
-                <a href="#">Hakkımızda</a>
-                <a href="#">Lisanlarımız</a>
-                <a href="#">İletişim</a>
-            </div>
-            <div class="icon-buttons">
-                <!-- Search Icon and Form -->
-                <div class="search-container">
-                    <button class="icon-btn search-toggle">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <form class="search-form" role="search">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-                <!-- Profile Icon -->
-                <a href="login.html"  class="icon-btn">
-                    <i class="fas fa-user"></i>
-                </a>
+        <input type="checkbox" id="chk1">
+        <div class="logo">
+            <img src="assets/front/images/logo.svg" alt="Web Master Logo">
+        </div>
 
-                <!-- Shopping Cart Icon -->
-                <button class="icon-btn site-header__cart" data-count="0">
-                    <i class="fas fa-shopping-cart"></i>
-                </button>
-            </div>
-        </nav>
+        <div class="search-box">
+            <form>
+                <input type="text" name="search" id="srch" placeholder="Search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+                <a href="#"><i class="fa fa-shopping-cart cart-icon"></i></a>
+                <a href="#"><i class="fa fa-user user-icon"></i></a>
+            </li>
+        </ul>
+
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
     </header>
 </body>
+
 </html>
-
-    <!-- Carousel -->
-    <div class="carousel">
-        <!--list item-->
-        <div class="list">
-            <div class="item">
-                <img src="assets/front/images/11.jpg">
-                <div class="content">
-                    <div class="author">Year 2100</div>
-                    <div class="title">Future Authors: Artificial Intelligence or Human?</div>
-                    <div class="topic">Artificial intelligence (AI)</div>
-                    <div class="des">
-                    Artificial intelligence's ability to produce content leads to interesting discussions about how the writing profession will evolve in the future. Artificial intelligence takes over routine and time-consuming writing tasks, offering writers the opportunity to focus on more creative work. However, the limits of AI's creativity are linked to its ability to fully reflect human emotions and experiences. Therefore, a future in which artificial intelligence and human writers work together to complement each other's shortcomings seems possible.
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-                        <button>Discover</button>
-                    </div>
+<!-- Carousel -->
+<div class="carousel">
+    <!--list item-->
+    <div class="list">
+        <div class="item">
+            <img src="assets/front/images/11.jpg">
+            <div class="content">
+                <div class="author">Year 2100</div>
+                <div class="title">Future Authors: Artificial Intelligence or Human?</div>
+                <div class="topic">Artificial intelligence (AI)</div>
+                <div class="des">
+                Artificial intelligence's ability to produce content leads to interesting discussions about how the writing profession will evolve in the future. Artificial intelligence takes over routine and time-consuming writing tasks, offering writers the opportunity to focus on more creative work. However, the limits of AI's creativity are linked to its ability to fully reflect human emotions and experiences. Therefore, a future in which artificial intelligence and human writers work together to complement each other's shortcomings seems possible.
+                </div>
+                <div class="buttons">
+                    <button>SEE MORE</button>
+                    <button>Discover</button>
                 </div>
             </div>
-            <div class="item">
-                <img src="assets/front/images/22.jpg">
-                <div class="content">
-                    <div class="author">Year 2100</div>
-                    <div class="title">The Mysterious World of Artificial Intelligence</div>
-                    <div class="topic">FIRST AND LAST AI</div>
-                    <div class="des">
-                        Artificial intelligence is a branch of science that enables computers to think, learn and solve problems like humans. So, how is this possible? Thanks to techniques such as machine learning and deep learning, artificial intelligence learns from large data sets and develops capabilities that can mimic human intelligence. In this way, artificial intelligence is now able to write content text on its own.
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-                        <button>Discover</button>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="assets/front/images/33.jpg">
-                <div class="content">
-                    <div class="author">Year 2100</div>
-                    <div class="title">Machine Learning</div>
-                    <div class="topic">What Can We Do? What Can We Discover</div>
-                    <div class="des">
-                        Machine learning is a branch of artificial intelligence that allows computers to learn and make predictions by analyzing data.
-                        In this field where statistical techniques are used, algorithms extract patterns and relationships from large data sets, thus learning.
-                        Machine learning has a wide range of applications, from spam email filtering to product recommendation systems.
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-                        <button>Discover</button>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="assets/front/images/44.jpg">
-                <div class="content">
-                    <div class="author">Year 2100</div>
-                    <div class="title">Deep Learning</div>
-                    <div class="topic">What Can We Do? What Can We Discover</div>
-                    <div class="des">
-                        Deep learning is a subset of machine learning that uses artificial neural networks inspired by the neural networks of the human brain to process data.
-
-                        This method is particularly powerful at recognizing and understanding complex patterns on large data sets.
-
-                        It has revolutionized fields such as image and voice recognition and language translation.
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-                        <button>Discover</button>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="assets/front/images/55.jpg">
-                <div class="content">
-                    <div class="author">Year 2100</div>
-                    <div class="title">Natural Language Processing (NLP)</div>
-                    <div class="topic">Image Processing</div>
-                    <div class="des">
-                        Natural language processing is a technology that enables computers to understand and process human language data.
-                        Advances in this field have made many applications possible, from voice assistants to automatic translation services.
-                        NLP can perform complex tasks such as text summarization, sentiment analysis, named entity recognition.
-                        Image processing is a field in which digital processing techniques are used to extract information from images.
-                        When integrated with artificial intelligence, this technology can be used in many areas such as facial recognition, medical image analysis, and vehicle license plate recognition.
-                        Deep learning models have significantly increased the accuracy and efficiency of image processing.
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-                        <button>Discover</button>
-                    </div>
-                </div>
-            </div>
-          
         </div>
-        <!--thumbnail-->
-        <div class="thumbnail">
-            <div class="item">
-                <img src="assets/front/images/11.jpg">
-                <div class="content">
-                    <div class="title">
-                        Name SLIDER
-                    </div>
-                    <div class="des">
-                        Description
-                    </div>
+        <div class="item">
+            <img src="assets/front/images/22.jpg">
+            <div class="content">
+                <div class="author">Year 2100</div>
+                <div class="title">The Mysterious World of Artificial Intelligence</div>
+                <div class="topic">FIRST AND LAST AI</div>
+                <div class="des">
+                    Artificial intelligence is a branch of science that enables computers to think, learn and solve problems like humans. So, how is this possible? Thanks to techniques such as machine learning and deep learning, artificial intelligence learns from large data sets and develops capabilities that can mimic human intelligence. In this way, artificial intelligence is now able to write content text on its own.
+                </div>
+                <div class="buttons">
+                    <button>SEE MORE</button>
+                    <button>Discover</button>
                 </div>
             </div>
-            <div class="item">
-                <img src="assets/front/images/22.jpg">
-                <div class="content">
-                    <div class="title">
-                        Name SLIDER
-                    </div>
-                    <div class="des">
-                        Description
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="assets/front/images/33.jpg">
-                <div class="content">
-                    <div class="title">
-                        Name SLIDER
-                    </div>
-                    <div class="des">
-                        Description
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="assets/front/images/44.jpg">
-                <div class="content">
-                    <div class="title">
-                        Name SLIDER
-                    </div>
-                    <div class="des">
-                        Description
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="assets/front/images/55.jpg">
-                <div class="content">
-                    <div class="title">
-                        Name SLIDER
-                    </div>
-                    <div class="des">
-                        Description
-                    </div>
-                </div>
-  
         </div>
-        <!--arrows-->
-        <div class="arrows">
-            <button id="prev"><</button>
-            <button id="next">></button>
+        <div class="item">
+            <img src="assets/front/images/33.jpg">
+            <div class="content">
+                <div class="author">Year 2100</div>
+                <div class="title">Machine Learning</div>
+                <div class="topic">What Can We Do? What Can We Discover</div>
+                <div class="des">
+                    Machine learning is a branch of artificial intelligence that allows computers to learn and make predictions by analyzing data.
+                    In this field where statistical techniques are used, algorithms extract patterns and relationships from large data sets, thus learning.
+                    Machine learning has a wide range of applications, from spam email filtering to product recommendation systems.
+                </div>
+                <div class="buttons">
+                    <button>SEE MORE</button>
+                    <button>Discover</button>
+                </div>
+            </div>
         </div>
+        <div class="item">
+            <img src="assets/front/images/44.jpg">
+            <div class="content">
+                <div class="author">Year 2100</div>
+                <div class="title">Deep Learning</div>
+                <div class="topic">What Can We Do? What Can We Discover</div>
+                <div class="des">
+                    Deep learning is a subset of machine learning that uses artificial neural networks inspired by the neural networks of the human brain to process data.
+
+                    This method is particularly powerful at recognizing and understanding complex patterns on large data sets.
+
+                    It has revolutionized fields such as image and voice recognition and language translation.
+                </div>
+                <div class="buttons">
+                    <button>SEE MORE</button>
+                    <button>Discover</button>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="assets/front/images/55.jpg">
+            <div class="content">
+                <div class="author">Year 2100</div>
+                <div class="title">Natural Language Processing (NLP)</div>
+                <div class="topic">Image Processing</div>
+                <div class="des">
+                    Natural language processing is a technology that enables computers to understand and process human language data.
+                    Advances in this field have made many applications possible, from voice assistants to automatic translation services.
+                    NLP can perform complex tasks such as text summarization, sentiment analysis, named entity recognition.
+                    Image processing is a field in which digital processing techniques are used to extract information from images.
+                    When integrated with artificial intelligence, this technology can be used in many areas such as facial recognition, medical image analysis, and vehicle license plate recognition.
+                    Deep learning models have significantly increased the accuracy and efficiency of image processing.
+                </div>
+                <div class="buttons">
+                    <button>SEE MORE</button>
+                    <button>Discover</button>
+                </div>
+            </div>
+        </div>
+      
     </div>
-    </div>
-    <div class="time"></div>
-
-  <!-- Testimonial Section -->
-
-  <section class="container">
-    <div class="testimonial mySwiper">
-        <!-- Swiper Wrapper -->
-        <div class="testi-content swiper-wrapper">
-            <!-- Slide -->
-            <div class="slide swiper-slide">
-                <img src="assets/front/images/33.jpg" alt="" class="image" />
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.
-                </p>
-                <i class="bx bxs-quote-alt-left quote-icon"></i>
-                <div class="details">
-                    <span class="name">Marnie Lotter</span>
-                    <span class="job">Web Developer</span>
+    <!--thumbnail-->
+    <div class="thumbnail">
+        <div class="item">
+            <img src="assets/front/images/11.jpg">
+            <div class="content">
+                <div class="title">
+                    Name SLIDER
+                </div>
+                <div class="des">
+                    Description
                 </div>
             </div>
-            <!-- Slide -->
-            <div class="slide swiper-slide">
-                <img src="assets/front/images/22.jpg" alt="" class="image" />
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.
-                </p>
-                <i class="bx bxs-quote-alt-left quote-icon"></i>
-                <div class="details">
-                    <span class="name">Marnie Lotter</span>
-                    <span class="job">Web Developer</span>
-                </div>
-            </div>
-            <!-- Slide -->
-            <div class="slide swiper-slide">
-                <img src="assets/front/images/11.jpg" alt="" class="image" />
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.
-                </p>
-                <i class="bx bxs-quote-alt-left quote-icon"></i>
-                <div class="details">
-                    <span class="name">Marnie Lotter</span>
-                    <span class="job">Web Developer</span>
-                </div>
-            </div>
-            <!-- Add more slides here -->
         </div>
+        <div class="item">
+            <img src="assets/front/images/22.jpg">
+            <div class="content">
+                <div class="title">
+                    Name SLIDER
+                </div>
+                <div class="des">
+                    Description
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="assets/front/images/33.jpg">
+            <div class="content">
+                <div class="title">
+                    Name SLIDER
+                </div>
+                <div class="des">
+                    Description
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="assets/front/images/44.jpg">
+            <div class="content">
+                <div class="title">
+                    Name SLIDER
+                </div>
+                <div class="des">
+                    Description
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="assets/front/images/55.jpg">
+            <div class="content">
+                <div class="title">
+                    Name SLIDER
+                </div>
+                <div class="des">
+                    Description
+                </div>
+            </div>
 
-        <!-- Swiper Navigation -->
-        <div class="swiper-button-next nav-btn"></div>
-        <div class="swiper-button-prev nav-btn"></div>
-        <!-- Swiper Pagination -->
-        <div class="swiper-pagination"></div>
     </div>
+    <!--arrows-->
+    <div class="arrows">
+        <button id="prev"><</button>
+        <button id="next">></button>
+    </div>
+</div>
+</div>
+<div class="time"></div>
+
+<!-- Testimonial Section -->
+
+<section class="container">
+<div class="testimonial mySwiper">
+    <!-- Swiper Wrapper -->
+    <div class="testi-content swiper-wrapper">
+        <!-- Slide -->
+        <div class="slide swiper-slide">
+            <img src="assets/images/33.jpg" alt="" class="image" />
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.
+            </p>
+            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <div class="details">
+                <span class="name">Marnie Lotter</span>
+                <span class="job">Web Developer</span>
+            </div>
+        </div>
+        <!-- Slide -->
+        <div class="slide swiper-slide">
+            <img src="assets/images/22.jpg" alt="" class="image" />
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.
+            </p>
+            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <div class="details">
+                <span class="name">Marnie Lotter</span>
+                <span class="job">Web Developer</span>
+            </div>
+        </div>
+        <!-- Slide -->
+        <div class="slide swiper-slide">
+            <img src="assets/images/11.jpg" alt="" class="image" />
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, saepe provident dolorem a quaerat quo error facere nihil deleniti eligendi ipsum adipisci, fugit, architecto amet asperiores doloremque deserunt eum nemo.
+            </p>
+            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <div class="details">
+                <span class="name">Marnie Lotter</span>
+                <span class="job">Web Developer</span>
+            </div>
+        </div>
+        <!-- Add more slides here -->
+    </div>
+
+    <!-- Swiper Navigation -->
+    <div class="swiper-button-next nav-btn"></div>
+    <div class="swiper-button-prev nav-btn"></div>
+    <!-- Swiper Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
 </section>
 
 
 <!-- Footer -->
 <footer>
-    <div class="footer-container">
-        <div class="footer-logo">
-            <h1>Your Logo</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="footer-links">
-            <h2>Follow Us</h2>
-            <div class="social-links">
-                <a href="#" class="social-icon">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-icon">
-                    <i class="fab fa-pinterest-p"></i>
-                </a>
-                <a href="#" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-        <div class="newsletter-signup">
-            <h2>Sign Up For Newsletter</h2>
-            <p>Sign up to our newsletter to get the latest articles & fashion voucher.</p>
-            <form action="#" method="post">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-        <div class="store-information">
-            <h2>Store Information</h2>
-            <p>My Company, 42 Puffin Street, 12345 Puffinville, France</p>
-            <p>Email: <a href="mailto:sales@yourcompany.com">sales@yourcompany.com</a></p>
-            <p>Phone: 0123-456-789</p>
+<div class="footer-container">
+    <div class="footer-logo">
+        <h1>Your Logo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="footer-links">
+        <h2>Follow Us</h2>
+        <div class="social-links">
+            <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-pinterest-p"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
         </div>
     </div>
+    <div class="newsletter-signup">
+        <h2>Sign Up For Newsletter</h2>
+        <p>Sign up to our newsletter to get the latest articles & fashion voucher.</p>
+        <form action="#" method="post">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+    <div class="store-information">
+        <h2>Store Information</h2>
+        <p>My Company, 42 Puffin Street, 12345 Puffinville, France</p>
+        <p>Email: <a href="mailto:sales@yourcompany.com">sales@yourcompany.com</a></p>
+        <p>Phone: 0123-456-789</p>
+    </div>
+</div>
 </footer>
 
 <!-- JS Libraries -->
@@ -317,7 +315,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="assets/front/js/app.js"></script>
 <script src="assets/front/js/script.js"></script>
-<script src="assets/front/js/search.js"></script>
+
 </body>
 
 </html>

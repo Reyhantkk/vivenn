@@ -1,178 +1,154 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: transparent;
+* {
   margin: 0;
-  font-size: 16px;
-  text-shadow: 0 1px 2px #ffffff;
-  overflow-x: hidden;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
 }
 
-a {
-  text-decoration: none;
+body {
+  background: url(bg.jpg);
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
 }
 
 header {
-  width: 1140px;
-  max-width: 80%;
-  margin: auto;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  z-index: 100;
-  padding: 0 20px;
-}
-
-header a {
-  margin-right: 40px;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between; /* Logo ve bağlantılar arasındaki boşluğu eşit olarak dağıtır */
-  align-items: center;
   width: 100%;
-}
-
-/* Logo Stili */
-.logo {
-  height: 191px; /* Logonun yüksekliğini artırdık */
-  width: auto; /* Genişliği otomatik yaparak yüksekliği korur */
-}
-/* Menü Bağlantıları */
-.nav-links {
+  height: 100px;
   display: flex;
-  gap: 15px; /* Bağlantılar arasında boşluk bırakır */
-  margin: 0 auto; /* Bağlantıları ortalar */
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
+  box-shadow: 0 0 10px #000;
+  background-color: rgba(65, 30, 30, 0.089);
 }
 
-/* Menü Bağlantıları Stili */
-.nav-links a {
-  color: #ffffff; /* Daha koyu renk yazı */
+#chk1 {
+  display: none;
+}
+
+i {
+  color: #000000;
+  cursor: pointer;
+}
+
+header .logo {
+  flex: 1;
+  color: #1b1616;
+  margin-left: 50px;
+  text-transform: uppercase;
+}
+
+header .logo img {
+  max-width: 155px;
+  height: auto;
+  margin: 12px;
+}
+
+header .search-box {
+  flex: 1;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: #bd6c6c;
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 50px; /* Arama butonunun daha rahat yerleşmesini sağlar */
+  text-align: center;
+  z-index: 1;
+}
+
+.search-box button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Butonu input'un içine doğru hizalar */
+  transform: translateY(-50%); /* Butonu dikeyde ortalar */
+ 
+  color: #fff;
+}
+
+header ul {
+  flex: 2;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
   text-decoration: none;
+  color: #5a1e1e;
+  font-weight: 600;
+  text-transform: uppercase;
   padding: 10px 15px;
-  transition: background-color 0.3s, color 0.3s; /* Arka plan ve yazı rengindeki geçişler */
 }
 
-/* Menü Bağlantıları Hover Stili */
-.nav-links a:hover {
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.1); /* Hover durumda arka plan rengi */
-  color: #000; /* Hover durumda yazı rengini koyulaştırma */
+header ul li a:hover {
+  border-bottom: 2px solid rgb(62, 221, 226);
 }
 
-/* İkon Butonları */
-.icon-buttons {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+header .menu {
+  font-size: 2.5em;
+  display: none;
 }
 
-.icon-buttons {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-left: auto;
-  padding: inherit;
+@media(max-width: 1000px) {
+  header ul {
+      position: fixed;
+      top: 100px;
+      right: -100%;
+      background: rgba(0, 0, 0, 0.5);
+      height: calc(100vh - 100px);
+      width: 50%;
+      flex-direction: column;
+      align-items: center;
+      transition: right 0.5s linear;
+  }
+
+  #chk1:checked ~ ul {
+      right: 0;
+  }
+
+  header .menu {
+      display: block;
+      width: 100px;
+      text-align: center;
+  }
+
+  header ul li {
+      margin-bottom: 20px;
+  }
+  .search-box {
+      flex: 1;
+      z-index: 1;
+      margin: 10px; /* Butonun ve input'un mobil görünümde daha rahat olması için margin eklenir */
+  }
+
+  .search-box input {
+      padding-right: 76px; /* Arama butonunun yeterli yer kaplamasını sağlar */
+  }
+
+  .search-box button {
+      right: 1px; /* Butonu input'un içine daha yakın yerleştirir */
+      width: 35px; /* Butonun mobilde uygun boyutta görünmesini sağlar */
+      height: 35px; /* Butonun mobilde uygun boyutta görünmesini sağlar */
+  }
 }
-
-.icon-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  color: #871cd3; /* İkon rengini koyu gri yapar */
-  background-color: #f0f0f0; /* İkonların arka plan rengini açık gri yapar */
-  border-radius: 50%; /* İkon butonlarının köşelerini yuvarlatır */
-  transition: background-color 0.3s;
-  margin: 0; /* Margin değerlerini sıfırlar, dengesiz boşlukları önler */
-}
-
-.icon-btn:hover {
-  background-color: #e0e0e0; /* Hover durumunda arka plan rengini daha koyu gri yapar */
-}
-
-.icon-btn i {
-  font-size: 20px; /* İkon boyutunu 20px yapar */
-}
-
-.site-header__cart {
-  position: relative;
-}
-
-.site-header__cart::after {
-  content: attr(data-count);
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  background: red; /* İçerik için arka plan rengini kırmızı yapar */
-  color: white; /* İçerik rengini beyaz yapar */
-  font-size: 12px; /* İçerik yazı boyutunu 12px yapar */
-  width: 20px; /* İçeriğin genişliğini 20px yapar */
-  height: 20px; /* İçeriğin yüksekliğini 20px yapar */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%; /* İçeriğin köşelerini tamamen yuvarlatır */
-}
-
-.search-container {
-  position: relative;
-}
-
-.search-form {
-  display: none; /* Başlangıçta formu gizle */
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #fff; /* Form arka plan rengi */
-  border: 1px solid #ddd; /* Form kenar çizgisi */
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Hafif gölge efekti */
-  z-index: 1000; /* Diğer elementlerin üzerinde görünmesini sağlar */
-  width: 200px; /* Form genişliği */
-}
-
-.search-container.active .search-form {
-  display: flex; /* Tıklanınca formu göster */
-}
-
-.search-form input {
-  flex: 1; /* Input alanının genişlemesini sağlar */
-}
-
-.search-form button {
-  margin-left: 5px; /* Buton ve input arasına boşluk bırakır */
-}
-
-
-.icon-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  color: #871cd3; /* İkon rengini koyu gri yapar */
-  background-color: #f0f0f0; /* İkonların arka plan rengini açık gri yapar */
-  border-radius: 50%; /* İkon butonlarının köşelerini yuvarlatır */
-  transition: background-color 0.3s; /* Hover durumunda arka plan renginin değişimini pürüzsüz yapar */
-}
-
-.icon-btn:hover {
-  background-color: #e0e0e0; /* Hover durumunda arka plan rengini daha koyu gri yapar */
-}
-
-.icon-btn i {
-  font-size: 20px; /* İkon boyutunu 20px yapar */
-}
-
 
 /* Carousel */
 .carousel {
@@ -204,7 +180,7 @@ header a {
   padding-right: 30%;
   box-sizing: border-box;
   color: white;
-  text-shadow: 0 5px 10px #871cd3;
+  text-shadow: 0 5px 10px #0040;
 }
 
 .carousel .list .item .content .author {
@@ -220,7 +196,7 @@ header a {
 }
 
 .carousel .list .item .content .topic {
-  color: #871cd3;
+  color: aqua;
 }
 
 .carousel .list .item .content .buttons {
@@ -235,7 +211,6 @@ header a {
 .carousel .list .item .content button {
   border: none;
   background-color: #eee;
-  color: #871cd3;
   font-weight: 500;
   letter-spacing: 3px;
   font-family: 'Courier New', Courier, monospace;
@@ -243,8 +218,8 @@ header a {
 }
 
 .carousel .list .item .content button:nth-child(2) {
-
-  color: #871cd3;
+  background-color: transparent;
+  color: #eee;
   border: 1px solid #eee;
   cursor: pointer;
 }
@@ -252,7 +227,7 @@ header a {
 /*thumbnail*/
 .thumbnail {
   position: absolute;
-  bottom: 50px;
+  bottom: 15px;
   left: 50%;
   width: max-content;
   z-index: 100;
@@ -262,11 +237,9 @@ header a {
 
 .thumbnail .item {
   width: 150px;
-  height: 220px;
+  height: 100px;
   flex-shrink: 0;
-  color: #fff;
   position: relative;
-  overflow: hidden;
 }
 
 .thumbnail .item img {
@@ -285,7 +258,6 @@ header a {
 
 .thumbnail .item .content .title {
   font-weight: bold;
-
 }
 
 /*arrows*/
@@ -304,7 +276,7 @@ header a {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #871cd3;
+  background-color: rgba(102, 96, 96, 0.5);
   border: none;
   font-family: 'Courier New', Courier, monospace;
   color: white;
@@ -458,7 +430,7 @@ header a {
 .time {
   width: 0%;
   height: 5px;
-  background-color: #871cd3;
+  background-color: aqua;
   position: absolute;
   z-index: 100;
   top: 0;
