@@ -47,38 +47,57 @@
     margin: 12px;
   }
   
-  header .search-box {
-    flex: 1;
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4; /* Header arka plan rengi */
+}
+
+.search-box {
     position: relative;
-  }
-  
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Arama kutusunun maksimum genişliği */
+    margin-left: 111px; /* Arama kutusunun soldan boşluğu */
+}
   .search-box input {
-    width: 52%;
+    width: 100%; /* Input genişliği arama kutusuna göre ayarlandı */
     height: 36px;
-    border: none;
+    border: 2px solid #ddd; /* Hafif bir kenarlık ekleyin */
     outline: none;
-   margin-left: 111px;
     border-radius: 30px;
-    color: rgb(82, 64, 64);
+    color: #524040;
     font-size: 16px;
-   
-    text-align: center;
+    padding: 0 40px 0 15px; /* Buton ve metin için yeterli iç boşluk */
+    box-sizing: border-box; /* Kenarlık ve padding'i dahil eder */
     z-index: 1;
-  }
-  
-  .search-box button {
+}
+
+.search-box button {
     cursor: pointer;
-    width: 40px;
-    height: 36px;
-    border-radius: 30px;
+    width: 36px; /* Buton genişliği */
+    height: 36px; /* Buton yüksekliği */
+    border-radius: 50%; /* Butonu daire şeklinde yapar */
     border: none;
     position: absolute;
-    top: 51%;
-    right: 114px; /* Butonu input'un içine doğru hizalar */
-    transform: translateY(-50%); /* Butonu dikeyde ortalar */
    
-    color: #f8a3a3;
-  }
+    background-color: #f8a3a3;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-size: 18px; /* Buton simge boyutu */
+    margin-top: -36px;
+    margin-left: 217px; /* Butonun sağdan boşluğu */
+}
+
+.search-box input:focus {
+    border-color: #f8a3a3; /* Input odaklandığında kenarlık rengi */
+}
   
   header ul {
     flex: 2;
