@@ -45,6 +45,7 @@ header .logo img {
   max-width: 183px;
   height: auto;
   margin: 12px;
+  z-index: 10;
 }
 
 .search-box {
@@ -76,7 +77,7 @@ header .logo img {
   border: none;
   position: absolute;
  
-  background-color: #f8a3a3;
+  background-color: #ffd; /* Buton rengi */
   color: #fff;
   display: flex;
   justify-content: center;
@@ -88,7 +89,7 @@ header .logo img {
 }
 
 .search-box input:focus {
-  border-color: #f8a3a3; /* Input odaklandığında kenarlık rengi */
+  border-color: #008080; /* Input odaklandığında kenarlık rengi */
 }
 
 header ul {
@@ -110,7 +111,7 @@ header ul li a {
 }
 
 header ul li a:hover {
-  border-bottom: 2px solid rgb(62, 221, 226);
+  border-bottom: 2px solid #008080;
 }
 
 header .menu {
@@ -212,8 +213,7 @@ header .menu {
 }
 
 .carousel .list .item .content .topic {
-  color: aqua;
-}
+  color: #008080;}
 
 .carousel .list .item .content .buttons {
   display: grid;
@@ -446,7 +446,7 @@ header .menu {
 .time {
   width: 0%;
   height: 5px;
-  background-color: aqua;
+  background-color: #008080;
   position: absolute;
   z-index: 100;
   top: 0;
@@ -654,7 +654,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.8);
 }
 .swiper-pagination-bullet-active {
-  background-color: #4070f4;
+  background-color: #008080;
 }
 @media screen and (max-width: 768px) {
   .slide p {
