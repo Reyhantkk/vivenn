@@ -54,6 +54,7 @@ header {
     align-items: center;
     padding: 10px;
     background-color: #871cd3; /* Header arka plan rengi */
+  
 }
 
 .search-box {
@@ -85,7 +86,7 @@ header {
     border: none;
     position: absolute;
    
-    background-color: #f8a3a3;
+    background-color: #008080;
     color: #fff;
     display: flex;
     justify-content: center;
