@@ -192,7 +192,7 @@ input {
     width: 2000px;
     height: 2000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #871cd3, #871cd3);
+    background: linear-gradient(-45deg, #FFECD9, #bb8adf);
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
@@ -295,7 +295,7 @@ form.sign-up-form {
     height: 49px;
     border: none;
     outline: none;
-    background-color: #871cd3;
+    background-color: #daa5ff;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
