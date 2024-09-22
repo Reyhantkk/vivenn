@@ -155,13 +155,13 @@ header {
   
 .contact {
     position: relative;
-    min-height: 122vh;
+    min-height: 100vh;
     padding: 50px 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url('../images/contact.jpg') no-repeat center center;
+    background: url('../images/1.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.5);
@@ -200,6 +200,8 @@ header {
     width: 50%;
     display: flex;
     flex-direction: column;
+ 
+    margin-right: 50px;
 }
 
 .container .contactInfo .box {
@@ -243,7 +245,7 @@ header {
 .contactForm {
     width: 40%;
     padding: 40px;
-    background: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .contactForm h2 {
@@ -265,7 +267,7 @@ header {
     font-size: 16px;
     margin: 10px 0;
     border: none;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #008080;
     outline: none;
     resize: none;
 }
@@ -290,14 +292,20 @@ header {
     color: #008080;
 }
 
-.contactForm .inputBox input[type="submit"] {
-    width: 100px;
-    padding: 10px;
-    cursor: pointer;
-    border: none;
-    background: #008080;
-    color: #fff;
-    font-size: 18px;
+
+.contactForm input[type="submit"] {
+    background-color: #008080; /* Butonun arka plan rengi */
+    color: white; /* Buton üzerindeki yazı rengi */
+    padding: 10px 20px; /* Butonun iç dolgu miktarı (üst-alt ve sağ-sol) */
+    border: none; /* Kenarlık yok */
+    border-radius: 5px; /* Kenarları yuvarlatma */
+    font-size: 16px; /* Yazı boyutu */
+    cursor: pointer; /* Mouse üzerinde butonun işaretçisini değiştirme */
+    transition: background-color 0.3s ease; /* Arka plan renginin geçiş animasyonu */
+}
+
+.contactForm input[type="submit"]:hover {
+    background-color: #008080; /* Hover (üzerine gelince) durumu için arka plan rengi */
 }
 
 @media (max-width: 750px) {
