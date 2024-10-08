@@ -55,7 +55,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: #871cd3; /* Header arka plan rengi */
+    background-color: #b581da; /* Header arka plan rengi */
   
 }
 
@@ -70,7 +70,7 @@ header {
   .search-box input {
     width: 100%; /* Input genişliği arama kutusuna göre ayarlandı */
     height: 36px;
-    border: 2px solid #ddd; /* Hafif bir kenarlık ekleyin */
+    border: 2px solid #b581da; /* Hafif bir kenarlık ekleyin */
     outline: none;
     border-radius: 30px;
     color: #524040;
@@ -100,7 +100,7 @@ header {
 }
 
 .search-box input:focus {
-    border-color: #f8a3a3; /* Input odaklandığında kenarlık rengi */
+    border-color: #b581da; /* Input odaklandığında kenarlık rengi */
 }
 header ul {
   flex: 2;
@@ -114,7 +114,7 @@ header ul li {
 
 header ul li a {
   text-decoration: none;
-  color: #f1f1f1;
+  color: #e8e3eb;
   font-weight: 600;
   text-transform: uppercase;
   padding: 10px 15px;
@@ -192,7 +192,7 @@ input {
     width: 2000px;
     height: 2000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #FFECD9, #bb8adf);
+    background: linear-gradient(-45deg, #b581da, #b581da);
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
