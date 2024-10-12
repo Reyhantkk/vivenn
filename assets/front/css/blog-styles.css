@@ -4,17 +4,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial;
-  html, body {
-    overflow-x: hidden;
-  }
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+  background-color: #f9f9f9;
 }
 
 body {
-  background: url(h.jpg);
+  background: url('h.jpg');
   background-size: cover;
   height: 100vh;
   background-position: center;
+  color: #333;
+  line-height: 1.6;
 }
 
 header {
@@ -25,8 +29,9 @@ header {
   align-items: center;
   position: fixed;
   z-index: 99;
-  box-shadow: 0 0 10px #000;
-  background-color: rgba(65, 30, 30, 0.089);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
 }
 
 #chk1 {
@@ -39,14 +44,12 @@ i {
 
 header .logo {
   flex: 1;
-  color: #1b1616;
   text-transform: uppercase;
 }
 
 header .logo img {
   max-width: 183px;
   height: auto;
-  margin: 12px;
 }
 
 .search-box {
@@ -54,47 +57,46 @@ header .logo img {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 600px; /* Arama kutusunun maksimum genişliği */
-  margin-left: 111px; /* Arama kutusunun soldan boşluğu */
+  max-width: 600px;
+  margin-left: 50px;
 }
+
 .search-box input {
-  width: 100%; /* Input genişliği arama kutusuna göre ayarlandı */
+  width: 100%;
   height: 36px;
-  border: 2px solid #ddd; /* Hafif bir kenarlık ekleyin */
+  border: 2px solid #ddd;
   outline: none;
   border-radius: 30px;
   color: #524040;
   font-size: 16px;
-  padding: 0 40px 0 15px; /* Buton ve metin için yeterli iç boşluk */
-  box-sizing: border-box; /* Kenarlık ve padding'i dahil eder */
-  z-index: 1;
+  padding: 0 40px 0 15px;
+  box-sizing: border-box;
 }
 
 .search-box button {
-  cursor: pointer;
-  width: 36px; /* Buton genişliği */
-  height: 36px; /* Buton yüksekliği */
-  border-radius: 50%; /* Butonu daire şeklinde yapar */
-  border: none;
-  position: absolute;
- 
-  background-color: #008080; /* Buton rengi */
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  font-size: 18px; /* Buton simge boyutu */
-  margin-top: -36px;
-  margin-left: 217px; /* Butonun sağdan boşluğu */
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    background-color: #008080;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-size: 18px;
+    margin-top: -36px;
+    margin-left: 217px;
 }
-
 .search-box input:focus {
-  border-color: #008080; /* Input odaklandığında kenarlık rengi */
+  border-color: #008080;
 }
 
 header ul {
   flex: 2;
+  list-style: none;
   display: flex;
   justify-content: space-evenly;
 }
@@ -105,13 +107,15 @@ header ul li {
 
 header ul li a {
   text-decoration: none;
-  color: #f1f1f1;
+  color: #333;
   font-weight: 600;
   text-transform: uppercase;
   padding: 10px 15px;
+  transition: color 0.3s;
 }
 
 header ul li a:hover {
+  color: #007BFF;
   border-bottom: 2px solid #008080;
 }
 
@@ -120,186 +124,185 @@ header .menu {
   display: none;
 }
 
-@media(max-width: 1000px) {
+@media (max-width: 1000px) {
   header ul {
-      position: fixed;
-      top: 100px;
-      right: -100%;
-      background: rgba(0, 0, 0, 0.5);
-      height: calc(100vh - 100px);
-      width: 50%;
-      flex-direction: column;
-      align-items: center;
-      transition: right 0.5s linear;
-  }
-
-  #chk1:checked ~ ul {
-      right: 0;
-  }
-
-  header .menu {
-      display: block;
-      width: 100px;
-      text-align: center;
-  }
-
-  header ul li {
-      margin-bottom: 20px;
-  }
-  .search-box {
-      flex: 1;
-      z-index: 1;
-      margin: 10px; /* Butonun ve input'un mobil görünümde daha rahat olması için margin eklenir */
-  }
-
-  .search-box input {
-      padding-right: 76px; /* Arama butonunun yeterli yer kaplamasını sağlar */
-  }
-
-  .search-box button {
-      right: 1px; /* Butonu input'un içine daha yakın yerleştirir */
-      width: 35px; /* Butonun mobilde uygun boyutta görünmesini sağlar */
-      height: 35px; /* Butonun mobilde uygun boyutta görünmesini sağlar */
-  }
-}
-
-
-@media(max-width: 1000px) {
-  header ul {
-      position: fixed;
-      top: 100px;
-      right: -100%;
-      background: rgba(0, 0, 0, 0.5);
-      height: calc(100vh - 100px);
-      width: 50%;
-      flex-direction: column;
-      align-items: center;
-      transition: right 0.5s linear;
-  }
-
-  #chk1:checked ~ ul {
-      right: 0;
-  }
-
-  header .menu {
-      display: block;
-      width: 100px;
-      text-align: center;
-  }
-
-  header ul li {
-      margin-bottom: 20px;
-  }
-  .search-box {
-      flex: 1;
-      z-index: 1;
-      margin: 10px; /* Butonun ve input'un mobil görünümde daha rahat olması için margin eklenir */
-  }
-
-  .search-box input {
-      padding-right: 76px; /* Arama butonunun yeterli yer kaplamasını sağlar */
-  }
-
-  .search-box button {
-      right: 1px; /* Butonu input'un içine daha yakın yerleştirir */
-      width: 35px; /* Butonun mobilde uygun boyutta görünmesini sağlar */
-      height: 35px; /* Butonun mobilde uygun boyutta görünmesini sağlar */
-  }
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
+    position: fixed;
+    top: 100px;
+    right: -100%;
+    background: rgba(0, 0, 0, 0.5);
+    height: calc(100vh - 100px);
+    width: 50%;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    transition: right 0.5s linear;
+  }
+
+  #chk1:checked ~ ul {
+    right: 0;
+  }
+
+  header .menu {
+    display: block;
+    width: 100px;
+    text-align: center;
+  }
+
+  header ul li {
+    margin-bottom: 20px;
+  }
+
+  .search-box {
+    flex: 1;
+    z-index: 1;
+    margin: 10px;
+  }
+
+  .search-box input {
+    padding-right: 76px;
+  }
+
+  .search-box button {
+    width: 35px;
+    height: 35px;
+  }
 }
 
-header .logo img {
-    width: 120px;
-    height: auto;
+.blog-video {
+  text-align: center;
+  margin: 30px 0;
 }
 
-header ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.blog-video iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 10px;
+  border: none;
 }
 
-header ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    transition: color 0.3s;
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-header ul li a:hover {
-    color: #007BFF;
+.left-column {
+  flex: 3;
+  padding-right: 20px;
+}
+
+.right-column {
+  flex: 1;
+  text-align: center;
+}
+
+.right-column img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
 }
 
 .blog {
-    padding: 40px 20px;
-    text-align: center;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .blog h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .blog-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
 .blog-item {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s;
-    text-align: left;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s;
+  text-align: left;
 }
 
 .blog-item:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .blog-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .blog-item h2 {
-    font-size: 1.5em;
-    margin: 15px 0;
-    color: #333;
+  font-size: 1.5em;
+  margin: 15px 0;
+  color: #333;
 }
 
 .blog-item p {
-    color: #777;
-    font-size: 1em;
-    margin-bottom: 10px;
+  color: #777;
+  font-size: 1em;
+  margin-bottom: 10px;
 }
 
 .read-more {
-    color: #007BFF;
-    font-weight: bold;
-    text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .read-more:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
+.news-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.news-item {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.news-item h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.news-item p {
+  color: #777;
+}
+
+.news-item a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+}

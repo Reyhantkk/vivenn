@@ -1,75 +1,123 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Doğal Yağlar</title>
+    <title>Anasayfa</title>
+
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/front/css/blog-styles.css">
-
 </head>
+
 <body>
-    <!-- Header Başlangıcı -->
-    <header class="header-background">
-        <a href="index.html">
+    <header>
+        <input type="checkbox" id="chk1">
+        <a href="Hakkımızda.html">
             <div class="logo">
-                <img src="assets/front/images/logo.svg" alt="Logo">
+                <img src="assets/front/images/logo.svg" alt="">
             </div>
         </a>
+
+        <div class="search-box">
+            <form>
+                <input type="text" name="search" id="srch" placeholder="Search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
         <ul>
             <li><a href="index.html">Anasayfa</a></li>
-            <li><a href="products.html">Ürünlerimiz</a></li>
+            <li><a href="template.html">Ürünlerimiz</a></li>
             <li><a href="Hakkımızda.html">Hakkımızda</a></li>
             <li><a href="contact.html">İletişim</a></li>
+            <li>
+                <a href="#"><i class="fa fa-shopping-cart cart-icon"></i></a>
+                <a href="login.html"><i class="fa fa-user user-icon"></i></a>
+            </li>
         </ul>
+
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
     </header>
     <!-- Header Bitişi -->
 
     <!-- Ana İçerik Başlangıcı -->
     <main>
-        <section class="blog">
-            <h1>Doğal Yağlar Hakkında Blog Haberleri</h1>
-            <div class="blog-list">
-                <!-- Blog Yazısı 1 -->
-                <div class="blog-item">
-                    <img src="assets/front/images/11.jpg" alt="Tatlı Badem Yağı Faydaları">
-                    <h2>Tatlı Badem Yağının Cilt ve Saç Üzerindeki Faydaları</h2>
-                    <p>Tatlı badem yağı, cildinizi nemlendirmek ve saçlarınızı güçlendirmek için kullanılan en popüler doğal yağlardan biridir. Bu yazımızda tatlı badem yağının sağladığı çeşitli faydaları keşfedeceksiniz.</p>
-                    <a href="#" class="read-more">Daha Fazla Oku</a>
+        <div class="container">
+            <div class="left-column">
+
+                <!-- Video Blog Kısmı -->
+                <div class="blog-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WVOmmc0UTiM"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
-                <!-- Blog Yazısı 2 -->
-                <div class="blog-item">
-                    <img src="assets/front/images/22.jpg" alt="Lavanta Yağı ve Rahatlama">
-                    <h2>Lavanta Yağı ile Rahatlatıcı Etki Nasıl Sağlanır?</h2>
-                    <p>Lavanta yağı, stresle mücadelede ve daha iyi bir uyku sağlamakta oldukça etkilidir. Bu yazıda lavanta yağının nasıl kullanıldığını ve faydalarını öğrenin.</p>
-                    <a href="#" class="read-more">Daha Fazla Oku</a>
-                </div>
-                <!-- Blog Yazısı 3 -->
-                <div class="blog-item">
-                    <img src="assets/front/images/33.jpg" alt="Ardıç Yağı ve Cilt Bakımı">
-                    <h2>Ardıç Yağının Cilt Bakımında Kullanımı</h2>
-                    <p>Ardıç yağı, cildin yenilenmesine ve tazelenmesine yardımcı olan güçlü özelliklere sahiptir. Bu yazıda ardıç yağının cilt bakımında nasıl kullanıldığını keşfedin.</p>
-                    <a href="#" class="read-more">Daha Fazla Oku</a>
-                </div>
-                <!-- Blog Yazısı 4 -->
-                <div class="blog-item">
-                    <img src="assets/front/images/44.jpg" alt="Biberiye Yağı ve Saç Dökülmesi">
-                    <h2>Biberiye Yağı ile Saç Dökülmesini Önleyin</h2>
-                    <p>Biberiye yağı, saç dökülmesini önlemek ve saçları güçlendirmek için kullanılan en etkili yağlardan biridir. Bu yazımızda biberiye yağının faydalarını öğrenebilirsiniz.</p>
-                    <a href="#" class="read-more">Daha Fazla Oku</a>
-                </div>
-                <!-- Blog Yazısı 5 -->
-                <div class="blog-item">
-                    <img src="assets/front/images/55.jpg" alt="Kekik Yağı ve Bağışıklık Sistemi">
-                    <h2>Kekik Yağının Bağışıklık Sistemi Üzerindeki Etkisi</h2>
-                    <p>Kekik yağı, antioksidan ve antiseptik özellikleri ile bağışıklık sistemini destekler. Bu yazıda kekik yağının sağlığımıza katkılarını keşfedin.</p>
-                    <a href="#" class="read-more">Daha Fazla Oku</a>
+                <div class="blog-list">
+                    <!-- Blog Yazısı 1 -->
+                    <div class="blog-item">
+                        <img src="assets/front/images/11.jpg" alt="Tatlı Badem Yağı Faydaları">
+                        <h2>Tatlı Badem Yağının Cilt ve Saç Üzerindeki Faydaları</h2>
+                        <p>Tatlı badem yağı, cildinizi nemlendirmek ve saçlarınızı güçlendirmek için kullanılan en popüler doğal yağlardan biridir. Bu yazımızda tatlı badem yağının sağladığı çeşitli faydaları keşfedeceksiniz.</p>
+                        <a href="#" class="read-more">Daha Fazla Oku</a>
+                    </div>
+                    <!-- Blog Yazısı 2 -->
+                    <div class="blog-item">
+                        <img src="assets/front/images/22.jpg" alt="Lavanta Yağı ve Rahatlama">
+                        <h2>Lavanta Yağı ile Rahatlatıcı Etki Nasıl Sağlanır?</h2>
+                        <p>Lavanta yağı, stresle mücadelede ve daha iyi bir uyku sağlamakta oldukça etkilidir. Bu yazıda lavanta yağının nasıl kullanıldığını ve faydalarını öğrenin.</p>
+                        <a href="#" class="read-more">Daha Fazla Oku</a>
+                    </div>
+                    <!-- Blog Yazısı 3 -->
+                    <div class="blog-item">
+                        <img src="assets/front/images/33.jpg" alt="Ardıç Yağı ve Cilt Bakımı">
+                        <h2>Ardıç Yağının Cilt Bakımında Kullanımı</h2>
+                        <p>Ardıç yağı, cildin yenilenmesine ve tazelenmesine yardımcı olan güçlü özelliklere sahiptir. Bu yazıda ardıç yağının cilt bakımında nasıl kullanıldığını keşfedin.</p>
+                        <a href="#" class="read-more">Daha Fazla Oku</a>
+                    </div>
+                    <!-- Blog Yazısı 4 -->
+                    <div class="blog-item">
+                        <img src="assets/front/images/44.jpg" alt="Biberiye Yağı ve Saç Dökülmesi">
+                        <h2>Biberiye Yağı ile Saç Dökülmesini Önleyin</h2>
+                        <p>Biberiye yağı, saç dökülmesini önlemek ve saçları güçlendirmek için kullanılan en etkili yağlardan biridir. Bu yazımızda biberiye yağının faydalarını öğrenebilirsiniz.</p>
+                        <a href="#" class="read-more">Daha Fazla Oku</a>
+                    </div>
+                    <!-- Blog Yazısı 5 -->
+                    <div class="blog-item">
+                        <img src="assets/front/images/55.jpg" alt="Kekik Yağı ve Bağışıklık Sistemi">
+                        <h2>Kekik Yağının Bağışıklık Sistemi Üzerindeki Etkisi</h2>
+                        <p>Kekik yağı, antioksidan ve antiseptik özellikleri ile bağışıklık sistemini destekler. Bu yazıda kekik yağının sağlığımıza katkılarını keşfedin.</p>
+                        <a href="#" class="read-more">Daha Fazla Oku</a>
+                    </div>
                 </div>
             </div>
-        </section>
+
+            <div class="right-column">
+                <img src="assets/front/images/55.jpg">
+                <h1>Doğal Yağların Güzelliğe ve Sağlığa Etkileri</h1>
+                <p>Son yıllarda doğal yağlar, hem güzellik hem de sağlık açısından önemli bir trend haline geldi. Lavanta, hindistancevizi, argan ve çay ağacı gibi bitkisel yağlar, sadece cilt bakımında değil, aynı zamanda sağlığı destekleyici özellikleriyle de dikkat çekiyor.</p>
+                <p>Lavanta yağı, yatıştırıcı ve rahatlatıcı etkisiyle bilinirken, çay ağacı yağı anti-bakteriyel özellikleriyle cilt problemlerine karşı kullanılıyor. Hindistancevizi yağı ise nemlendirici özelliği sayesinde saç ve cilt bakımında tercih ediliyor. Argan yağı da, içeriğindeki E vitamini ile saçların daha parlak ve sağlıklı görünmesini sağlıyor.</p>
+                <p>Uzmanlar, doğal yağların kimyasal içerikli kozmetik ürünlere göre daha az yan etkiye sahip olduğunu ve uzun vadede cilt sağlığını desteklediğini belirtiyor. Bununla birlikte, doğal yağları kullanmadan önce herhangi bir alerjik reaksiyona karşı test yapılması öneriliyor.</p>
+                <p>Doğal yağlarla ilgili artan farkındalık, bu yağların günlük hayatımızda daha fazla kullanılmasını sağlarken, bu yağların kaliteli ve güvenilir kaynaklardan temin edilmesi de önem taşıyor.</p>
+            </div>
+        </div>
     </main>
-    <!-- Ana İçerik Bitişi -->
+
+    <script src="hakkımızda.js"></script>
 </body>
 </html>
