@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/front/css/cart.css">
+    <title>Sepetim</title>
+</head>
+<body>
+    <header>
+        <h1>Sepetim</h1>
+        <a href="template.html">Ürünlere Geri Dön</a>
+    </header>
+
+    <main>
+        <div class="cart-container">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Ürün</th>
+                        <th>Fiyat</th>
+                        <th>Adet</th>
+                        <th>Toplam</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Sepetteki ürünler dinamik olarak buraya eklenecek -->
+                </tbody>
+            </table>
+            <div class="cart-summary">
+                <p>Toplam Tutar: <span id="total-amount">₺0.00</span></p>
+                <button onclick="proceedToCheckout()">Ödeme Yap</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/front/js/cart.js"></script>
+</body>
+</html>
