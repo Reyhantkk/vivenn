@@ -15,6 +15,7 @@ html, body {
 body {
     background: url('../images/99.jpg') no-repeat center center fixed; /* Arka plan resmi, tam ekran ve sabit */
     background-size: cover; /* Resmin ekranı tamamen kaplamasını sağlar */
+    backdrop-filter: blur(10px); /* Arka plana bulanıklık eklendi */
 }
 
 .bg {
@@ -217,10 +218,10 @@ header .menu {
     border: 1px solid #ddd;
     padding: 1.5rem;
     text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #ffffff;
+    border-radius: 20px; 
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    background-color: rgba(255, 255, 255, 0.8);
     transform: matrix(1, 0, 0, 1, 0, 0);
     position: relative;
     max-width: 80%;
@@ -235,7 +236,7 @@ header .menu {
 }
 .product:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2); /* Hover sırasında daha belirgin gölge ve yükselme efekti eklendi */
 }
 
 .product img {
