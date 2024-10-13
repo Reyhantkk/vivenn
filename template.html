@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+   
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/front/css/template.css">
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" id="chk1">
+        <a href="template.html">
+            <div class="logo">
+                <img src="assets/front/images/logo.svg" alt="Logo">
+            </div>
+        </a>
+        
+        <div class="search-box">
+            <form>
+                <input type="text" name="search" id="srch" placeholder="Search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="template.html">Ürünlerimiz</a></li>
+            <li><a href="Hakkımızda.html">Hakkımızda</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+            <li>
+                <a href="#"><i class="fa fa-shopping-cart cart-icon"></i></a>
+                <a href="login.html"><i class="fa fa-user user-icon"></i></a>
+
+            </li>
+        </ul>
+
+        <div class="menu">
+            <label for="chk1">
+                <i class="fa fa-bars"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="filter-buttons">
+        <button onclick="filterProducts('price-asc')">Fiyata Göre (Artan)</button>
+        <button onclick="filterProducts('price-desc')">Fiyata Göre (Azalan)</button>
+        <button onclick="filterProducts('name-asc')">Ürün Adına Göre (A>Z)</button>
+        <button onclick="filterProducts('name-desc')">Ürün Adına Göre (Z<A)</button>
+        <button onclick="filterProducts('stock')">Stoktaki Ürünler</button>
+    </div>
+
+    <main>
+        <div class="products-container">
+            <!-- Ürün Kartları -->
+            <div class="product" data-price="505" data-name="Acı Badem Yağı" data-stock="true">
+                <img src="assets/front/images/products/1.jpg" alt="Acı Badem Yağı">
+                <h2>Bioterra Organik Acı Elma Uçucu Yağı 5 ml</h2>
+                <p>₺505,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="523" data-name="Bioterra Organik Ardıç Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/2.jpg"alt="Bioterra Organik Ardıç Uçucu Yağı">
+                <h2>Bioterra Organik Ardıç Uçucu Yağı 5 ml</h2>
+                <p>₺523,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="836" data-name="Bioterra Organik Bergamot Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/3.jpg" alt="Bioterra Organik Bergamot Uçucu Yağı">
+                <h2>Bioterra Organik Bergamot Uçucu Yağı 5 ml</h2>
+                <p>₺836,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="356" data-name="Bioterra Organik Biberiye Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/4.jpg" alt="Bioterra Organik Biberiye Uçucu Yağı">
+                <h2>Bioterra Organik Biberiye Uçucu Yağı 5 ml</h2>
+                <p>₺356,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+            <div class="product" data-price="505" data-name="Bioterra Organik Acı Elma Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/5.jpg" alt="Bioterra Organik Acı Elma Uçucu Yağı">
+                <h2>Bioterra Organik Acı Elma Uçucu Yağı 5 ml</h2>
+                <p>₺505,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="523" data-name="Bioterra Organik Ardıç Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/6.jpg" alt="Bioterra Organik Ardıç Uçucu Yağı">
+                <h2>Bioterra Organik Ardıç Uçucu Yağı 5 ml</h2>
+                <p>₺523,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="836" data-name="Bioterra Organik Bergamot Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/7.jpg" alt="Bioterra Organik Bergamot Uçucu Yağı">
+                <h2>Bioterra Organik Bergamot Uçucu Yağı 5 ml</h2>
+                <p>₺836,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="356" data-name="Bioterra Organik Biberiye Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/8.jpg"alt="Bioterra Organik Biberiye Uçucu Yağı">
+                <h2>Bioterra Organik Biberiye Uçucu Yağı 5 ml</h2>
+                <p>₺356,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+            <div class="product" data-price="505" data-name="Bioterra Organik Acı Elma Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/9.jpg" alt="Bioterra Organik Acı Elma Uçucu Yağı">
+                <h2>Bioterra Organik Acı Elma Uçucu Yağı 5 ml</h2>
+                <p>₺505,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="523" data-name="Bioterra Organik Ardıç Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/10.jpg" alt="Bioterra Organik Ardıç Uçucu Yağı">
+                <h2>Bioterra Organik Ardıç Uçucu Yağı 5 ml</h2>
+                <p>₺523,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="836" data-name="Bioterra Organik Bergamot Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/11.jpg" alt="Bioterra Organik Bergamot Uçucu Yağı">
+                <h2>Bioterra Organik Bergamot Uçucu Yağı 5 ml</h2>
+                <p>₺836,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="356" data-name="Bioterra Organik Biberiye Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/12.jpg" alt="Bioterra Organik Biberiye Uçucu Yağı">
+                <h2>Bioterra Organik Biberiye Uçucu Yağı 5 ml</h2>
+                <p>₺356,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+            <div class="product" data-price="505" data-name="Bioterra Organik Acı Elma Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/13.jpg" alt="Bioterra Organik Acı Elma Uçucu Yağı">
+                <h2>Bioterra Organik Acı Elma Uçucu Yağı 5 ml</h2>
+                <p>₺505,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="523" data-name="Bioterra Organik Ardıç Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/14.jpg" alt="Bioterra Organik Ardıç Uçucu Yağı">
+                <h2>Bioterra Organik Ardıç Uçucu Yağı 5 ml</h2>
+                <p>₺523,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="836" data-name="Bioterra Organik Bergamot Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/15.jpg" alt="Bioterra Organik Bergamot Uçucu Yağı">
+                <h2>Bioterra Organik Bergamot Uçucu Yağı 5 ml</h2>
+                <p>₺836,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="356" data-name="Bioterra Organik Biberiye Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/16.jpg" alt="Bioterra Organik Biberiye Uçucu Yağı">
+                <h2>Bioterra Organik Biberiye Uçucu Yağı 5 ml</h2>
+                <p>₺356,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+            <div class="product" data-price="505" data-name="Bioterra Organik Acı Elma Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/17.jpg" alt="Bioterra Organik Acı Elma Uçucu Yağı">
+                <h2>Bioterra Organik Acı Elma Uçucu Yağı 5 ml</h2>
+                <p>₺505,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="523" data-name="Bioterra Organik Ardıç Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/1.jpg" alt="Bioterra Organik Ardıç Uçucu Yağı">
+                <h2>Bioterra Organik Ardıç Uçucu Yağı 5 ml</h2>
+                <p>₺523,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="836" data-name="Bioterra Organik Bergamot Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/1.jpg" alt="Bioterra Organik Bergamot Uçucu Yağı">
+                <h2>Bioterra Organik Bergamot Uçucu Yağı 5 ml</h2>
+                <p>₺836,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-price="356" data-name="Bioterra Organik Biberiye Uçucu Yağı" data-stock="true">
+                <img src="assets/front/images/products/1.jpg" alt="Bioterra Organik Biberiye Uçucu Yağı">
+                <h2>Bioterra Organik Biberiye Uçucu Yağı 5 ml</h2>
+                <p>₺356,00</p>
+                <button class="add-to-cart">Sepete Ekle</button>
+            </div>
+        </div>
+    </main>
+ 
+
+    <script src="assets/front/js/template.js"></script>
+</body>
+
+</html>
