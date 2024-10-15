@@ -218,9 +218,9 @@ header .menu {
     align-items: stretch; /* Make image and text stretch to the same height */
     width: 48%;
     max-width: 750px;
-    border: 1px solid #ddd;
+    border: 6px solid #ddd;
     border-radius: 10px;
-    padding: 20px;
+    padding: 9px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Yumuşak gölge efekti */
     background-color: rgba(255, 255, 255, 0.8);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -233,10 +233,10 @@ header .menu {
 
 /* Adjusting image to match the height of text */
 .product img {
-    width: 45%; /* Adjust image width */
+    width: 55%; /* Increased image width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
-    margin-right: 40px;
+    margin-right: 30px;
     flex-shrink: 0;
     object-fit: contain; /* Ensures the image scales properly */
 }
@@ -250,26 +250,29 @@ header .menu {
 }
 
 .product h2 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #385d83;
+    color: #0f2942;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+.product h4 {
+    font-size: 1.0em;
+    font-weight: 600;
+    color: #555;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px;
 }
 
 .product p {
-    margin: 0 0 15px 0;
-    font-size: 1.1em;
-    color: #555;
-}
-
-.product .price {
     font-size: 1.2em;
     color: #505da5;
     font-weight: 600;
     margin-top: 10px;
 }
+
+
 
 .add-to-cart {
     background: linear-gradient(135deg, #008080 0%, #4b4b4b 100%);
