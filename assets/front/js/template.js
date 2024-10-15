@@ -1,4 +1,3 @@
-// Sepet verilerini localStorage'dan yükleyin veya boş bir dizi oluşturun
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Sepete ürün ekleme işlevi
@@ -62,6 +61,31 @@ function showCartMessage(message) {
     setTimeout(() => {
         messageBox.remove();
     }, 2000);
+}
+
+// Ürünleri filtreleme fonksiyonu
+function filterProducts(criteria) {
+    const products = Array.from(document.querySelectorAll('.product'));
+    products.sort((a, b) => {
+        switch (criteria) {
+            case 'price-asc':
+                return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+            case 'price-desc':
+                return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+            case 'name-asc':
+                return a.dataset.name.localeCompare(b.dataset.name);
+            case 'name-desc':
+                return b.dataset.name.localeCompare(a.dataset.name);
+            case 'stock':
+                return a.dataset.stock === 'true' ? -1 : 1;
+            default:
+                return 0;
+        }
+    });
+    
+    const container = document.querySelector('.products-container');
+    container.innerHTML = '';
+    products.forEach(product => container.appendChild(product));
 }
 
 // Sayfa yüklendiğinde sepet ikonunu güncelleyin
