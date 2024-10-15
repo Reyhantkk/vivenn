@@ -210,19 +210,19 @@ header .menu {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: space-around;
-    padding: 30px;
+    padding: 30px; /* Container için boşluk eklenir */
 }
 
 .product {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch; /* Make image and text stretch to the same height */
     width: 48%;
     max-width: 750px;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.9); /* Less transparent */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Yumuşak gölge efekti */
+    background-color: rgba(255, 255, 255, 0.8);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -231,20 +231,22 @@ header .menu {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Adjusting image to match the height of text */
 .product img {
-    width: 50%;
-    height: auto;
+    width: 45%; /* Adjust image width */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
     margin-right: 40px;
     flex-shrink: 0;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    object-fit: contain; /* Ensures the image scales properly */
 }
 
 .product-info {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     text-align: left;
+    width: 55%; /* Give the product info a balanced width */
 }
 
 .product h2 {
@@ -256,17 +258,17 @@ header .menu {
     margin-bottom: 15px;
 }
 
-.product h4 {
-    font-size: 1.3em; /* Slightly larger subtitle */
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 12px;
-}
-
 .product p {
     margin: 0 0 15px 0;
     font-size: 1.1em;
-    color: #4368e2;
+    color: #555;
+}
+
+.product .price {
+    font-size: 1.2em;
+    color: #505da5;
+    font-weight: 600;
+    margin-top: 10px;
 }
 
 .add-to-cart {
@@ -284,7 +286,7 @@ header .menu {
 
 .add-to-cart:hover {
     background: linear-gradient(135deg, #4b4b4b 0%, #008080 100%);
-    transform: translateY(-3px) scale(1.05); /* Adds slight scale effect */
+    transform: translateY(-3px);
 }
 
 /* Mobile Responsiveness */
