@@ -47,10 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
         suggestionBox.innerHTML = '';
 
         if (value) {
-            const suggestions = searchSuggestions.filter(suggestion => {
-                const words = suggestion.toLowerCase().split(' ');
-                return words.some(word => word.includes(value));
-            });
+            const suggestions = searchSuggestions.filter(suggestion =>
+                suggestion.toLowerCase().includes(value)
+            );
 
             suggestions.forEach(suggestion => {
                 const suggestionItem = document.createElement('li');
