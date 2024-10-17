@@ -358,7 +358,6 @@ form.sign-up-form {
     justify-content: space-around;
     text-align: center;
     z-index: 7;
-    
 
 }
 
@@ -399,7 +398,7 @@ form.sign-up-form {
 }
 
 .image {
-    width: 60%;
+    width: 58%;
     transition: 1.1s .4s ease-in-out;
 }
 

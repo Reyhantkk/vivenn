@@ -182,7 +182,7 @@ header .menu {
 .filter-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 11%;
+    margin-top: 8%;
     gap: 10px;
 }
 
