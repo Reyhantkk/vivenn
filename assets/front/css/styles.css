@@ -251,6 +251,7 @@ header .menu {
   z-index: 100;
   display: flex;
   gap: 20px;
+  
 }
 
 .thumbnail .item {
@@ -258,6 +259,7 @@ header .menu {
   height: 100px;
   flex-shrink: 0;
   position: relative;
+  
 }
 
 .thumbnail .item img {
@@ -265,6 +267,8 @@ header .menu {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+ 
+
 }
 
 .thumbnail .item .content {
@@ -272,10 +276,12 @@ header .menu {
   bottom: 10px;
   left: 10px;
   right: 10px;
+  
 }
 
 .thumbnail .item .content .title {
   font-weight: bold;
+  
 }
 
 /*arrows*/
