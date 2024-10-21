@@ -1,7 +1,3 @@
-
-sign_in_btn.addEventListener("click", () => {
-    container.classList.remove("sign-up-mode");
-});
 const express = require('express');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
@@ -11,11 +7,12 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
 // MySQL Veritabanı Bağlantısı
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'yourpassword',  // MySQL root şifreni gir
+    password: '1c11c9fc1.D',  // MySQL root şifreni gir
     database: 'kullanici_sistemi'  // Kullanıcı bilgilerini saklayacağın veritabanı
 });
 
