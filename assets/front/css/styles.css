@@ -712,19 +712,16 @@ footer {
 }
 
 /* Menü açıldığında arka planın kararmasını sağlayan saydam katman */
-#menu-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6); /* Karartma efekti */
-  z-index: 998; /* Menüden bir kademe geride */
+#chk1:checked ~ ul {
+  right: 0;
 }
 
-/* Menü açıldığında karartma katmanı görünür hale gelir */
-#chk1:checked ~ #menu-overlay {
+header .menu {
   display: block;
+  width: 100px;
+  text-align: center;
 }
 
+header ul li {
+  margin-bottom: 20px;
+}

@@ -165,11 +165,7 @@ header .menu {
         margin-bottom: 20px;
     }
 
-    .search-box {
-        flex: 1;
-        z-index: 1;
-        margin: 10px;
-    }
+ 
 
     .search-box input {
         padding-right: 76px;
