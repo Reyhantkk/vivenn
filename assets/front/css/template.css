@@ -308,4 +308,7 @@ header .menu {
     .product-info {
         text-align: center;
     }
+    .filter-buttons {
+        margin-top: 31%;
+    }
 }
