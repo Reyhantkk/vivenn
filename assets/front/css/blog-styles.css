@@ -296,6 +296,7 @@ h1 {
     flex-direction: column;
     padding: 10px;
   }
+  
 
   .left-column, .right-column {
     flex: 1;
@@ -321,7 +322,7 @@ h1 {
 }
 @media (max-width: 480px) {
   header .logo img {
-    max-width: 182px;
+    max-width: px;
   }
 
   .search-box {
