@@ -135,48 +135,34 @@ header .menu {
     display: none;
 }
 
-@media(max-width: 1000px) {
+@media (max-width: 1000px) {
     header ul {
-        position: fixed;
-        top: 100px;
-        right: -100%;
-        background: rgba(0, 0, 0, 0.5);
-        height: calc(100vh - 100px);
-        width: 50%;
-        flex-direction: column;
-        align-items: center;
-        transition: right 0.5s linear;
+      position: fixed;
+      top: 100px;
+      right: -100%;
+      background: rgba(0, 0, 0, 0.5);
+      height: calc(100vh - 100px);
+      width: 50%;
+      flex-direction: column;
+      align-items: center;
+      transition: right 0.5s linear;
     }
-    .search-box {
-        display: none; /* Mobilde arama kutusunu gizle */
-      }
-
+  
     #chk1:checked ~ ul {
-        right: 0;
+      right: 0;
     }
-
+  
     header .menu {
-        display: block;
-        width: 100px;
-        text-align: center;
+      display: block;
+      width: 100px;
+      text-align: center;
     }
-
+  
     header ul li {
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
-
- 
-
-    .search-box input {
-        padding-right: 76px;
-    }
-
-    .search-box button {
-        right: 1px;
-        width: 35px;
-        height: 35px;
-    }
-}
+  
+  }
 
 .filter-buttons {
     display: flex;
@@ -310,6 +296,6 @@ header .menu {
     }
     .filter-buttons {
         margin-top: 31%;
-     
+        bottom: 10px;
     }
 }
