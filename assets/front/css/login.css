@@ -570,7 +570,9 @@ form.sign-up-form {
     .logo {
         height: 120px; /* Mobil ekranlarda logonun yüksekliğini daha da azalt */
     }
-
+       .search-box {
+       display: none; /* Mobil ekranlarda arama kutusunu gizle */
+    }
     .image {
         display: none;
     }

@@ -147,6 +147,9 @@ header .menu {
         align-items: center;
         transition: right 0.5s linear;
     }
+    .search-box {
+        display: none; /* Mobilde arama kutusunu gizle */
+      }
 
     #chk1:checked ~ ul {
         right: 0;

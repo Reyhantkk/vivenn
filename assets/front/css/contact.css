@@ -350,7 +350,9 @@ header .menu {
     .contact {
         padding: 30px;
     }
-
+ .search-box {
+    display: none; /* Mobilde arama kutusunu gizle */
+  }
     .container {
         flex-direction: column;
         align-items: center;
