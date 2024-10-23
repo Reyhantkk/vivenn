@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Sayfası</title>
+    <style>
+        /* Basit bir stil örneği */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label, input {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ödeme Yap</h1>
+        <form id="payment-form">
+            <label for="card-element">Kredi Kartı Bilgileri</label>
+            <div id="card-element">
+                <!-- Stripe Kart Elemanı burada görüntülenecek -->
+            </div>
+            <div id="card-errors" role="alert"></div>
+            <button type="submit">Ödemeyi Tamamla</button>
+        </form>
+    </div>
+
+    <!-- Stripe.js kütüphanesini ekle -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="assets/front/js/checkout.js"></script> <!-- JS kodu burada olacak -->
+
+</body>
+</html>

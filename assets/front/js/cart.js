@@ -41,6 +41,5 @@ function removeFromCart(productName) {
 }
 
 function proceedToCheckout() {
-    alert('Ödeme sayfasına yönlendiriliyorsunuz...');
-    // Burada ödeme sayfasına yönlendirme yapılabilir.
+    window.location.href = 'checkout.html'; // Kullanıcıyı ödeme sayfasına yönlendir
 }
