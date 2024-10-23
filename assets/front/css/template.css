@@ -274,7 +274,7 @@ header .menu {
 
 
 .add-to-cart {
-    background: linear-gradient(135deg, #008080 0%, #4b4b4b 100%);
+    background: linear-gradient(135deg, #008080 0%, #d8c9c9 100%);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -287,7 +287,7 @@ header .menu {
 }
 
 .add-to-cart:hover {
-    background: linear-gradient(135deg, #4b4b4b 0%, #008080 100%);
+    background: linear-gradient(135deg, #e2d8d8 0%, #008080 100%);
     transform: translateY(-3px);
 }
 
@@ -310,5 +310,6 @@ header .menu {
     }
     .filter-buttons {
         margin-top: 31%;
+     
     }
 }
