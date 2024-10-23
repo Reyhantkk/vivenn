@@ -291,4 +291,73 @@ h1 {
 .news-item a:hover {
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
 
+  .left-column, .right-column {
+    flex: 1;
+    padding: 0;
+  }
+
+  .right-column {
+    margin-top: 20px;
+  }
+
+  header ul {
+    width: 100%;
+    top: 100px;
+  }
+
+ .search-box {
+   display: none; /* Mobilde arama kutusunu gizle */
+  }
+
+  .search-box button {
+    margin-left: 140px;
+  }
+}
+@media (max-width: 480px) {
+  header .logo img {
+    max-width: 182px;
+  }
+
+  .search-box {
+   display: none; /* Mobilde arama kutusunu gizle */
+  }
+
+  .search-box button {
+    margin-left: 105px;
+  }
+
+  .container {
+    margin: 50px auto;
+    padding: 5px;
+  }
+
+  .blog h1 {
+    font-size: 1.8em;
+  }
+
+  .blog-item h2 {
+    font-size: 1.2em;
+  }
+
+  .news-container {
+    grid-template-columns: 1fr;
+  }
+
+  .news-item {
+    padding: 10px;
+  }
+
+  header ul {
+    width: 100%;
+  }
+
+  .blog-video iframe {
+    height: 250px;
+  }
+}
