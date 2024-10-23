@@ -672,3 +672,59 @@ footer {
     display: none;
   }
 }
+@media (max-width: 1000px) {
+  header ul {
+    position: fixed;
+    top: 100px;
+    right: -100%;
+    background: rgba(0, 0, 0, 0.8); /* Menü arka planı saydam */
+    height: calc(100vh - 100px); /* Menü yüksekliği */
+    width: 100%; /* Mobilde tam genişlik */
+    flex-direction: column;
+    align-items: center;
+    transition: right 0.5s ease-in-out;
+    z-index: 1000; /* Menü içeriğin üzerinde olacak */
+  }
+
+  #chk1:checked ~ ul {
+    right: 0; /* Menü açıldığında görünür olacak */
+  }
+
+  header .menu {
+    display: block;
+    text-align: center;
+    z-index: 1001; /* Menü simgesi en üstte */
+  }
+
+  header ul li {
+    margin-bottom: 20px;
+  }
+  
+  .search-box {
+    display: none; /* Mobilde arama kutusu gizlenecek */
+  }
+}
+
+/* İçerik bölümlerini düzenleme */
+.carousel, .container {
+  position: relative;
+  z-index: 0; /* Menü içerikten önde olacak */
+}
+
+/* Menü açıldığında arka planın kararmasını sağlayan saydam katman */
+#menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* Karartma efekti */
+  z-index: 998; /* Menüden bir kademe geride */
+}
+
+/* Menü açıldığında karartma katmanı görünür hale gelir */
+#chk1:checked ~ #menu-overlay {
+  display: block;
+}
+
