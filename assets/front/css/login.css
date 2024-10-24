@@ -64,44 +64,45 @@ header {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 600px; /* Arama kutusunun maksimum genişliği */
-    margin-left: 111px; /* Arama kutusunun soldan boşluğu */
+    max-width: 600px;
+    margin-left: 111px;
 }
-  .search-box input {
-    width: 100%; /* Input genişliği arama kutusuna göre ayarlandı */
+
+.search-box input[type="text"] {
+    width: 100%;
     height: 36px;
-    border: 2px solid #b581da; /* Hafif bir kenarlık ekleyin */
+    border: 2px solid #ddd;
     outline: none;
     border-radius: 30px;
     color: #524040;
     font-size: 16px;
-    padding: 0 40px 0 15px; /* Buton ve metin için yeterli iç boşluk */
-    box-sizing: border-box; /* Kenarlık ve padding'i dahil eder */
+    padding: 0 40px 0 15px;
+    box-sizing: border-box;
     z-index: 1;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #008080;
 }
 
 .search-box button {
     cursor: pointer;
-    width: 36px; /* Buton genişliği */
-    height: 36px; /* Buton yüksekliği */
-    border-radius: 50%; /* Butonu daire şeklinde yapar */
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
     border: none;
     position: absolute;
-   
     background-color: #008080;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    font-size: 18px; /* Buton simge boyutu */
-  
-    margin-left: 217px; /* Butonun sağdan boşluğu */
+    font-size: 18px;
+    margin-left: 217px;
 }
 
-.search-box input:focus {
-    border-color: #b581da; /* Input odaklandığında kenarlık rengi */
-}
 header ul {
   flex: 2;
   display: flex;
@@ -157,22 +158,6 @@ header .menu {
   }
 
 }
- 
-  .search-box {
-      flex: 1;
-      z-index: 1;
-      margin: 10px; /* Butonun ve input'un mobil görünümde daha rahat olması için margin eklenir */
-  }
-
-  .search-box input {
-      padding-right: 76px; /* Arama butonunun yeterli yer kaplamasını sağlar */
-  }
-
-  .search-box button {
-      right: 1px; /* Butonu input'un içine daha yakın yerleştirir */
-      width: 35px; /* Butonun mobilde uygun boyutta görünmesini sağlar */
-      height: 35px; /* Butonun mobilde uygun boyutta görünmesini sağlar */
-  }
 
 
 body,
