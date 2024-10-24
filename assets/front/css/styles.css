@@ -483,45 +483,6 @@ header .menu {
     font-size: 30px;
   }
 }
-/*footer*/
-footer {
-  background-color: #871cd3; /* Footer arka plan rengi */
-  color: #fff; /* Yazı rengi */
-  padding: 40px 20px; /* İç boşluk */
-  text-align: center; /* Metni ortalar */
-}
-
-.footer-container {
-  max-width: 1400px; /* Maksimum genişlik */
-  margin: auto; /* Ortalar */
-  display: flex; /* Flexbox kullanır */
-  flex-wrap: wrap; /* Satır içindeki öğelerin satır sonlarına taşmasını sağlar */
-  gap: 20px; /* Öğeler arasındaki boşluk */
-  justify-content: space-between; /* Öğeleri aralar */
-}
-
-.footer-logo, .footer-links, .newsletter-signup, .store-information {
-  flex: 2; /* Öğelere eşit genişlik verir */
-  min-width: 200px; /* Minimum genişlik */
-}
-
-.footer-logo {
-  margin-bottom: 0; /* Alt boşluk kaldırıldı */
-}
-
-.footer-logo h1 {
-  margin: 0;
-  font-size: 24px; /* Logo başlığı boyutu */
-}
-
-.footer-logo p {
-  font-size: 14px; /* Açıklama yazısının boyutu */
-}
-
-.footer-links h2, .newsletter-signup h2, .store-information h2 {
-  font-size: 18px; /* Başlık boyutu */
-  margin-bottom: 10px; /* Alt boşluk */
-}
 
 .social-links {
   margin-top: 10px; /* Üst boşluk */
