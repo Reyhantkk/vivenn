@@ -364,30 +364,29 @@ h1 {
 }
 @media(max-width: 1000px) {
   header ul {
-      position: fixed;
-      top: 100px;
-      right: -100%;
-      background: rgba(22, 20, 20, 0.5);
-      height: calc(100vh - 100px);
-      width: 50%;
-      flex-direction: column;
-      align-items: center;
-      transition: right 0.5s linear;
-  }
+    position: fixed;
+    top: 100px;
+    right: -100%;
+    background: rgba(0, 0, 0, 0.5);
+    height: calc(100vh - 100px);
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    transition: right 0.5s linear;
+}
 
-  #chk1:checked ~ ul {
-      right: 0;
-  }
+#chk1:checked ~ ul {
+    right: 0;
+}
 
-  header .menu {
-    display: block;
-    width: 100px;
-    text-align: center;
-  }
+header .menu {
+  display: block;
+  width: 100px;
+  text-align: center;
+}
 
-  header ul li {
-    margin-bottom: 20px;
-  }
+header ul li {
+  margin-bottom: 20px;
+}
 
 }
- 
