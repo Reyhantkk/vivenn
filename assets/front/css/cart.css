@@ -107,6 +107,7 @@ header a:hover {
     background-color: #e60000;
 }
 
+/* Mobil Ekranlar İçin */
 @media (max-width: 600px) {
     .cart-container {
         padding: 10px;

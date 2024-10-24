@@ -1,62 +1,60 @@
-// Stripe anahtarını kullanarak stripe nesnesi oluştur
-var stripe = Stripe('your-publishable-key-here'); // Stripe’in test publishable anahtarını ekleyin
-var elements = stripe.elements();
+// Stripe API Anahtarınızı burada tanımlayın
+const stripe = Stripe('STRIPE_PUBLIC_KEY'); // Buraya kendi Stripe Public Key'inizi koymalısınız
+const elements = stripe.elements();
 
-// Kart elemanını oluştur
-var card = elements.create('card');
-card.mount('#card-element');
+// Kart elemanını oluşturun ve formda kullanın
+const cardElement = elements.create('card');
+cardElement.mount('#card-element');
 
-// Hataları göstermek için event listener
-card.on('change', function(event) {
-    var displayError = document.getElementById('card-errors');
+// Hata mesajları için DOM referansı
+const cardErrors = document.getElementById('card-errors');
+
+// Kart elemanına gerçek zamanlı doğrulama ekleyin
+cardElement.on('change', function(event) {
     if (event.error) {
-        displayError.textContent = event.error.message;
+        cardErrors.textContent = event.error.message;
     } else {
-        displayError.textContent = '';
+        cardErrors.textContent = '';
     }
 });
 
-// Form gönderildiğinde
-var form = document.getElementById('payment-form');
+// Form gönderim işlemi
+const form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Stripe ile token oluştur
-    stripe.createToken(card).then(function(result) {
+    // Ödeme bilgilerini Stripe'a gönder
+    stripe.createToken(cardElement).then(function(result) {
         if (result.error) {
-            // Hata varsa, mesajı göster
-            var errorElement = document.getElementById('card-errors');
-            errorElement.textContent = result.error.message;
+            // Hata varsa kullanıcıya göster
+            cardErrors.textContent = result.error.message;
         } else {
-            // Token oluştuysa sunucuya gönder
-            stripeTokenHandler(result.token);
+            // Stripe token'i ile sunucuya gönderilecek formu işleyin
+            handleStripeToken(result.token);
         }
     });
 });
 
-function stripeTokenHandler(token) {
-    // AJAX ile token'ı sunucuya gönder
+// Stripe token'i ile sunucuya POST isteği gönder
+function handleStripeToken(token) {
+    // Tokeni sunucuya gönderme işlemi
     fetch('/charge', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            stripeToken: token.id,
-            amount: 5 // Ödeme miktarını burada belirtebilirsin (örneğin 50.00 TL)
+            token: token.id
         })
-    })
-    .then(function(response) {
+    }).then(response => {
         return response.json();
-    })
-    .then(function(result) {
-        // İşlem başarılıysa sonucu göster
-        alert('Ödeme başarılı!');
-    })
-    .catch(function(error) {
-        // Hata durumunda mesajı göster
-        console.error('Hata:', error);
-        alert('Ödeme başarısız. Lütfen tekrar deneyin.');
+    }).then(data => {
+        if (data.success) {
+            alert('Ödeme başarılı!');
+            window.location.href = '/success';  // Başarılı sayfasına yönlendirin
+        } else {
+            alert('Ödeme işlemi başarısız oldu. Lütfen tekrar deneyin.');
+        }
     });
 }
