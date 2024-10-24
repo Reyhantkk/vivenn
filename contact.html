@@ -79,7 +79,8 @@
                 </div>
             </div>
             <div class="contactForm">
-                <form>
+                <form action="mesaj_gonder.php" method="POST">
+
                     <h2>Mesaj Gönder</h2>
                     <div class="inputBox">
                         <input type="text" name="fullname" required="required">
@@ -90,12 +91,14 @@
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
-                        <textarea required="required"></textarea>
+                        <textarea name="message" required="required"></textarea>
                         <span>Mesajınızı yazın...</span>
                     </div>
                     <input type="submit" value="Gönder">
                 </form>
             </div>
+            
+            
         </div>
     </section>
 </body>
