@@ -147,14 +147,17 @@ header .menu {
   }
 
   header .menu {
-      display: block;
-      width: 100px;
-      text-align: center;
+    display: block;
+    width: 100px;
+    text-align: center;
   }
 
   header ul li {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
+
+}
+ 
   .search-box {
       flex: 1;
       z-index: 1;
@@ -170,7 +173,6 @@ header .menu {
       width: 35px; /* Butonun mobilde uygun boyutta görünmesini sağlar */
       height: 35px; /* Butonun mobilde uygun boyutta görünmesini sağlar */
   }
-}
 
 
 body,

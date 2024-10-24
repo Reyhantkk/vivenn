@@ -675,32 +675,37 @@ footer {
 }
 
 @media (max-width: 1000px) {
-  header ul {
-    position: fixed;
-    top: 100px;
-    right: -100%;
-    background: rgba(0, 0, 0, 0.8); /* Menü arka planı saydam */
-    height: calc(100vh - 100px); /* Menü yüksekliği */
-    width: 100%; /* Mobilde tam genişlik */
-    flex-direction: column;
-    align-items: center;
-    transition: right 0.5s ease-in-out;
-    z-index: 1000; /* Menü içeriğin üzerinde olacak */
+  @media(max-width: 1000px) {
+    header ul {
+        position: fixed;
+        top: 100px;
+        right: -100%;
+        background: rgba(0, 0, 0, 0.5);
+        height: calc(100vh - 100px);
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.5s linear;
+    }
+  
+    #chk1:checked ~ ul {
+        right: 0;
+    }
+  
+    header .menu {
+      display: block;
+      width: 100px;
+      text-align: center;
+    }
+  
+    header ul li {
+      margin-bottom: 20px;
+    }
+  
   }
+   
 
-  #chk1:checked ~ ul {
-    right: 0; /* Menü açıldığında görünür olacak */
-  }
-
-  header .menu {
-    display: block;
-    text-align: center;
-    z-index: 1001; /* Menü simgesi en üstte */
-  }
-
-  header ul li {
-    margin-bottom: 20px;
-  }
+ 
   
   .search-box {
     display: none; 
