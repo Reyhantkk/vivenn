@@ -290,6 +290,9 @@ header .menu {
         margin-right: 0;
         margin-bottom: 20px;
     }
+    .search-box {
+        display: none;
+    }
 
     .product-info {
         text-align: center;
