@@ -56,6 +56,16 @@ header a:hover {
     text-align: center;
     vertical-align: middle; /* İçerik ortalansın */
 }
+.button {
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
 .cart-table th {
     background-color: #008080;
@@ -95,19 +105,7 @@ header a:hover {
 }
 
 /* Sil Butonu */
-.delete-button {
-    background-color: #ff5c5c;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-.delete-button:hover {
-    background-color: #e60000;
-}
 
 /* Adres Formu Stili */
 .address-form-container {
