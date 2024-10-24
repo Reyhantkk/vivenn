@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', loadCartItems);
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+// Sepet ürünlerini yükleme fonksiyonu
 function loadCartItems() {
     const cartItemsContainer = document.getElementById('cart-items');
     let totalAmount = 0;
@@ -29,6 +30,7 @@ function loadCartItems() {
     document.getElementById('total-amount').innerText = `₺${totalAmount.toFixed(2)}`;
 }
 
+// Ürün silme işlemi
 function removeFromCart(productName) {
     // Ürünü sepetten kaldır
     cart = cart.filter(item => item.name !== productName);
@@ -40,6 +42,39 @@ function removeFromCart(productName) {
     location.reload();
 }
 
-function proceedToCheckout() {
-    window.location.href = 'checkout.html'; // Kullanıcıyı ödeme sayfasına yönlendir
+// Ödeme yap butonuna tıklanınca adres formunu göster
+function showAddressForm() {
+    const addressFormContainer = document.getElementById('address-form-container');
+    addressFormContainer.style.display = 'block'; // Adres formunu görünür yap
 }
+
+// Adres formu gönderildiğinde işlemleri yap
+document.getElementById('address-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Sayfa yenilemesini engelle
+
+    // Adres bilgilerini al
+    const fullName = document.getElementById('full-name').value;
+    const address = document.getElementById('address').value;
+    const city = document.getElementById('city').value;
+    const postalCode = document.getElementById('postal-code').value;
+    const country = document.getElementById('country').value;
+
+    // Adres bilgilerini kontrol et
+    if (!fullName || !address || !city || !postalCode || !country) {
+        alert("Lütfen tüm alanları doldurun!");
+        return;
+    }
+
+    // Adres bilgilerini işleme alabilir veya sunucuya gönderebilirsiniz
+    console.log({
+        fullName,
+        address,
+        city,
+        postalCode,
+        country
+    });
+
+    // Ardından ödeme sayfasına yönlendirme işlemi yapılabilir
+    alert('Adres onaylandı! Şimdi ödeme sayfasına yönlendirileceksiniz.');
+    window.location.href = 'checkout.html'; // Ödeme sayfasına yönlendir
+});

@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Sepetim</h1>
-        <a href="template.html">Ürünlere Geri Dön</a> <!-- Geri dönme bağlantısı -->
+        <a href="template.html">Ürünlere Geri Dön</a>
     </header>
 
     <main>
@@ -25,13 +25,36 @@
                     </tr>
                 </thead>
                 <tbody id="cart-items">
-                    <!-- JavaScript ile dinamik olarak ürünler yüklenecek -->
+                    <!-- Sepet ürünleri burada dinamik olarak yüklenecek -->
                 </tbody>
             </table>
             <div class="cart-summary">
                 <p>Toplam Tutar: <span id="total-amount">₺0.00</span></p>
-                <button onclick="proceedToCheckout()">Ödeme Yap</button>
+                <button onclick="showAddressForm()">Ödemeyi Tamamla</button>
             </div>
+        </div>
+
+        <!-- Adres Formu (Başlangıçta Gizli) -->
+        <div class="address-form-container" id="address-form-container" style="display: none;">
+            <h2>Adres Bilgilerinizi Giriniz</h2>
+            <form id="address-form">
+                <label for="full-name">Ad Soyad:</label>
+                <input type="text" id="full-name" name="fullName" required>
+
+                <label for="address">Adres:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="city">Şehir:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="postal-code">Posta Kodu:</label>
+                <input type="text" id="postal-code" name="postalCode" required>
+
+                <label for="country">Ülke:</label>
+                <input type="text" id="country" name="country" required>
+
+                <button type="submit">Adresi Onayla ve Ödeme Yap</button>
+            </form>
         </div>
     </main>
 
