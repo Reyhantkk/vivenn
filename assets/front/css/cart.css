@@ -42,6 +42,7 @@ header a:hover {
     padding: 20px;
 }
 
+
 /* Sepet Tablosu */
 .cart-table {
     width: 100%;
@@ -54,17 +55,7 @@ header a:hover {
     border-bottom: 1px solid #ddd;
     padding: 15px;
     text-align: center;
-    vertical-align: middle; /* İçerik ortalansın */
-}
-.button {
-    background-color: #008080;
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1.1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    vertical-align: middle;
 }
 
 .cart-table th {
@@ -76,6 +67,26 @@ header a:hover {
     max-width: 50px;
     border-radius: 5px;
 }
+/* Style for the delete button */
+.cart-table td button {
+    background-color: #008080; /* Red color for delete button */
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9em;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table td button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+
 
 /* Sepet Özeti */
 .cart-summary {
@@ -91,21 +102,22 @@ header a:hover {
 
 .cart-summary button {
     background-color: #008080;
-    color: #fff;
-    border: none;
+    color: white;
     padding: 12px 25px;
     font-size: 1.1em;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cart-summary button:hover {
     background-color: #006666;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
-
-/* Sil Butonu */
-
 
 /* Adres Formu Stili */
 .address-form-container {
@@ -156,33 +168,25 @@ form button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%; /* Buton genişliği %100 yapılarak form ile hizalanması sağlandı */
+    width: 100%;
     text-align: center;
 }
 
 form button:hover {
-    background-color: #008080;
+    background-color: #006666;
 }
 
-/* Mobil Ekranlar İçin */
 /* Mobil Ekranlar İçin (600px ve altı) */
 @media (max-width: 600px) {
-    .cart-container
-    {
+    .cart-container {
         padding: 10px;
     }
-
-    /* Sepet Tablosu */
 
     .cart-table th,
     .cart-table td {
         padding: 10px;
     }
 
-
-
-    
-    /* Sepet Özeti */
     .cart-summary {
         text-align: left;
         font-size: 1em;
@@ -191,22 +195,19 @@ form button:hover {
     .cart-summary button {
         font-size: 1em;
         padding: 10px;
-        width: 100%; /* Tam genişlik */
+        width: 100%;
     }
 
-    /* Ürün Resmi */
     .cart-table img {
         max-width: 80px;
         margin-bottom: 10px;
     }
 
-    /* Mobilde Adres Formu */
     .address-form-container {
         padding: 20px;
         width: 100%;
     }
 
-    /* Butonlar Mobilde */
     form button {
         width: 100%;
         font-size: 1em;

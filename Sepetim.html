@@ -22,22 +22,24 @@
                         <th>Adet</th>
                         <th>Toplam</th>
                         <th>Sil</th>
+                            
+                        
                     </tr>
                 </thead>
                 <tbody id="cart-items">
-                    <!-- Sepet ürünleri burada dinamik olarak yüklenecek -->
+                    <!-- JavaScript ile dinamik olarak ürün satırları eklenecek -->
                 </tbody>
             </table>
             <div class="cart-summary">
                 <p>Toplam Tutar: <span id="total-amount">₺0.00</span></p>
-                <button onclick="showAddressForm()">Ödemeyi Tamamla</button>
+                <button onclick="showAddressForm()" class="checkout-button">Ödemeyi Tamamla</button>
             </div>
         </div>
 
         <!-- Adres Formu (Başlangıçta Gizli) -->
         <div class="address-form-container" id="address-form-container" style="display: none;">
             <h2>Adres Bilgilerinizi Giriniz</h2>
-            <form id="address-form">
+            <form id="address-form" onsubmit="submitAddressForm(event)">
                 <label for="full-name">Ad Soyad:</label>
                 <input type="text" id="full-name" name="fullName" required>
 
@@ -53,7 +55,7 @@
                 <label for="country">Ülke:</label>
                 <input type="text" id="country" name="country" required>
 
-                <button type="submit">Adresi Onayla ve Ödeme Yap</button>
+                <button type="submit" class="confirm-button">Adresi Onayla ve Ödeme Yap</button>
             </form>
         </div>
     </main>
