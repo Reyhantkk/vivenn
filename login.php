@@ -4,7 +4,7 @@ session_start();
 // Veritabanı bağlantısı
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "DAVUTtok-1";
 $dbname = "user_database";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
