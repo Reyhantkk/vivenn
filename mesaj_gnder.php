@@ -1,24 +1,42 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Form verilerini alıyoruz
-    $name = htmlspecialchars($_POST['fullname']);  // Güvenlik için girişleri temizliyoruz
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $message = htmlspecialchars($_POST['message']);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    // Hedef e-posta adresi
-    $to = "davut@vovienn.com, info@vovienn.com";
-     // Buraya kendi e-posta adresinizi yazın
-    $subject = "İletişim Formu Mesajı";
-    $body = "Ad Soyad: $name\nEmail: $email\nMesaj:\n$message";
+require 'C:/xampp/htdocs/vivenn/PHPMailer/src/Exception.php';
+require 'C:/xampp/htdocs/vivenn/PHPMailer/src/PHPMailer.php';
+require 'C:/xampp/htdocs/vivenn/PHPMailer/src/SMTP.php';
+
+
+$mail = new PHPMailer(true);
+
+try {
+    // Sunucu ayarları
+    $mail->isSMTP();
+    $mail->Host = 'davut@vovienn.com'; // SMTP sunucusu
+
+
+    $mail->SMTPAuth = true;
+    $mail->Username = 'davut@vovienn.com'; // SMTP kullanıcı adı
+    $mail->Password = 'DAVUTtok-1'; // SMTP şifresi
     
-    // E-posta başlıklarını ayarlıyoruz
-    $headers = "From: $email";
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+    
+    $mail->SMTPDebug = 2; // Hata ayıklama seviyesini ayarlar
 
-    // E-postayı gönderiyoruz
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Mesaj başarıyla gönderildi!";
-    } else {
-        echo "Mesaj gönderilirken bir hata oluştu.";
-    }
+    
+    // Alıcılar
+    $mail->setFrom('gonderen@example.com', 'Gönderen Adı');
+    $mail->addAddress('davut@vovienn.com', 'Alıcı Adı');
+
+    // İçerik
+    $mail->isHTML(true);
+    $mail->Subject = 'Konu';
+    $mail->Body    = 'Mesaj içeriği';
+
+    $mail->send();
+    echo 'Mesaj başarıyla gönderildi';
+} catch (Exception $e) {
+    echo "Mesaj gönderilemedi. Hata: {$mail->ErrorInfo}";
 }
 ?>
