@@ -19,15 +19,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Kullanıcıyı kontrol et
-    $sql = "SELECT * FROM users WHERE email='$email'";
-    $result = $conn->query($sql);
+    // Hazırlıklı ifade kullanarak kullanıcıyı kontrol et
+    $stmt = $conn->prepare("SELECT password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
 
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($hashed_password);
+        $stmt->fetch();
+
         // Şifre doğrulama
-        if (password_verify($password, $user['password'])) {
+        if (password_verify($password, $hashed_password)) {
             $_SESSION['email'] = $email;
             echo "Giriş başarılı!"; // Burada kullanıcıyı yönlendirebiliriz
         } else {
@@ -36,6 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Kullanıcı bulunamadı!";
     }
+
+    $stmt->close();
 }
 
 $conn->close();

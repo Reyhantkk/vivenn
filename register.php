@@ -1,9 +1,9 @@
 <?php
 // Veritabanı bağlantısı
 $servername = "localhost";
-$username = "root"; // Genellikle "root" veya veritabanı kullanıcı adı
-$password = ""; // Veritabanı parolanız
-$dbname = "user_database"; // Veritabanı adınız
+$username = "root";
+$password = "";
+$dbname = "user_database";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -17,14 +17,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Şifreyi güvenli hale getiriyoruz
 
-    // Veritabanına ekleyin
-    $sql = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
+    // Hazırlıklı ifade kullanarak veritabanına ekleyin
+    $stmt = $conn->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
+    $stmt->bind_param("ss", $email, $password);
 
-    if ($conn->query($sql) === TRUE) {
+    if ($stmt->execute()) {
         echo "Kayıt başarılı!";
     } else {
-        echo "Hata: " . $sql . "<br>" . $conn->error;
+        echo "Hata: " . $stmt->error;
     }
+
+    $stmt->close();
 }
 
 $conn->close();
