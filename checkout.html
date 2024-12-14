@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/front/css/checkout.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
     <title>Ödeme Sayfası</title>
+    <link rel="stylesheet" href="assets/front/css/checkout.css"> <!-- Harici CSS dosyası -->
 </head>
 <body>
 
@@ -28,13 +28,24 @@
             <button type="submit" id="submit-button">Ödemeyi Tamamla</button>
         </form>
     </div>
- 
-    
-    
+
+    <!-- Modal (KVKK Aydınlatma Metni Gösterimi) -->
+    <div id="kvkk-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>KVKK Aydınlatma Metni</h2>
+        <p>
+          <!-- KVKK Aydınlatma Metnini buraya ekleyin -->
+          Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında 
+          veri işleme faaliyetlerimizi, veri sorumlusu bilgilerini, işlenen verileri, 
+          işleme amaçlarını, veri sahiplerinin haklarını ve diğer ilgili hususları içerir.
+          (Tam metni burada detaylandırın.)
+        </p>
+      </div>
+    </div>
 
     <!-- Stripe.js kütüphanesini ekle -->
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="assets/front/js/checkout.js"></script> <!-- JS kodu burada olacak -->
-
+    <script src="assets/front/js/checkout.js"></script> <!-- Harici JS dosyası -->
 </body>
 </html>

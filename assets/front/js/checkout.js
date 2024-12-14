@@ -66,6 +66,7 @@ form.addEventListener('submit', function(event) {
     });
 });
 
+
 // Stripe token'i ile sunucuya POST isteği gönder
 function handleStripeToken(token) {
     // Tokeni sunucuya gönderme işlemi
