@@ -1,13 +1,3 @@
-<?php
-// Veritabanı bağlantısını dahil edin
-include 'db_connection.php'; // Veritabanı bağlantı dosyanız
-
-// Siparişleri veritabanından çek
-$sql = "SELECT * FROM orders"; // 'orders' tablosu siparişlerin saklandığı yer
-$result = $conn->query($sql);
-
-?>
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -33,32 +23,37 @@ $result = $conn->query($sql);
     <table>
         <thead>
             <tr>
+                <th>Müşteri Numarası</th>
                 <th>Ad Soyad</th>
+                <th>Telefon Numarası</th>
                 <th>Adres</th>
                 <th>Şehir</th>
                 <th>Posta Kodu</th>
                 <th>Ülke</th>
-                <th>Sepet İçeriği</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Adedi</th>
                 <th>Tarih</th>
             </tr>
         </thead>
         <tbody>
             <?php
             if ($result->num_rows > 0) {
-                // Her siparişi bir tablo satırı olarak göster
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
+                    echo "<td>" . $row['customer_id'] . "</td>";
                     echo "<td>" . $row['full_name'] . "</td>";
+                    echo "<td>" . $row['phone'] . "</td>";
                     echo "<td>" . $row['address'] . "</td>";
                     echo "<td>" . $row['city'] . "</td>";
                     echo "<td>" . $row['postal_code'] . "</td>";
                     echo "<td>" . $row['country'] . "</td>";
-                    echo "<td>" . $row['cart'] . "</td>";
+                    echo "<td>" . $row['product_name'] . "</td>";
+                    echo "<td>" . $row['quantity'] . "</td>";
                     echo "<td>" . $row['created_at'] . "</td>";
                     echo "</tr>";
                 }
             } else {
-                echo "<tr><td colspan='7'>Hiç sipariş bulunamadı.</td></tr>";
+                echo "<tr><td colspan='10'>Hiç sipariş bulunamadı.</td></tr>";
             }
             ?>
         </tbody>

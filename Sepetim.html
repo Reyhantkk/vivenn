@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/front/css/cart.css">
     <title>Sepetim</title>
+    <link rel="stylesheet" href="assets/front/css/cart.css">
 </head>
 <body>
     <header>
@@ -22,8 +22,6 @@
                         <th>Adet</th>
                         <th>Toplam</th>
                         <th>Sil</th>
-                            
-                        
                     </tr>
                 </thead>
                 <tbody id="cart-items">
@@ -38,10 +36,13 @@
 
         <!-- Adres Formu (Başlangıçta Gizli) -->
         <div class="address-form-container" id="address-form-container" style="display: none;">
-            <h2>Adres Bilgilerinizi Giriniz</h2>
+            <h2>Adres ve İletişim Bilgileriniz</h2>
             <form id="address-form" onsubmit="submitAddressForm(event)">
                 <label for="full-name">Ad Soyad:</label>
                 <input type="text" id="full-name" name="fullName" required>
+
+                <label for="phone">Telefon Numarası:</label>
+                <input type="tel" id="phone" name="phone" required>
 
                 <label for="address">Adres:</label>
                 <input type="text" id="address" name="address" required>
@@ -54,6 +55,11 @@
 
                 <label for="country">Ülke:</label>
                 <input type="text" id="country" name="country" required>
+
+                <!-- Müşteri Numarası (Login olmuş kullanıcı için) -->
+                <!-- Bu genellikle oturum açan kullanıcıdan sunucu tarafında elde edilir. -->
+                <!-- Eğer müşteri numarasını bu aşamada almak istiyorsanız: -->
+                <!-- <input type="hidden" name="customerId" value="12345"> -->
 
                 <button type="submit" class="confirm-button">Adresi Onayla ve Ödeme Yap</button>
             </form>

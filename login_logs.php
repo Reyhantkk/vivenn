@@ -2,7 +2,7 @@
 // Veritabanı bağlantısını dahil et
 include 'db_connection.php';
 
-// Giriş loglarını çekmek için SQL sorgusu
+
 $sql = "SELECT users.email, login_logs.login_time FROM login_logs
         JOIN users ON login_logs.user_id = users.id
         ORDER BY login_logs.login_time DESC";
