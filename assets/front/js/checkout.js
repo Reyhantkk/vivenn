@@ -78,9 +78,8 @@ form.addEventListener('submit', function(event) {
 });
 
 // Stripe token'i ile sunucuya POST isteği gönder
-// Token'ı sunucuya gönderme işlemi
-function sendTokenToServer(token) {
-    fetch('/charge', {
+function handleStripeToken(token) {
+    fetch('charge.php', { // PHP dosyanızın yolu
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token: token })
