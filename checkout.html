@@ -29,22 +29,18 @@
         </form>
     </div>
 
-    <!-- Modal (KVKK Aydınlatma Metni Gösterimi) -->
-    <div id="kvkk-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>KVKK Aydınlatma Metni</h2>
-        <p>
-          <!-- KVKK Aydınlatma Metnini buraya ekleyin -->
-          Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında 
-          veri işleme faaliyetlerimizi, veri sorumlusu bilgilerini, işlenen verileri, 
-          işleme amaçlarını, veri sahiplerinin haklarını ve diğer ilgili hususları içerir.
-          (Tam metni burada detaylandırın.)
-        </p>
+    <div id="kvkk-modal" class="modal" style="display: none;"> <!-- Başlangıçta gizli -->
+        <div class="modal-content">
+          <span id="close-modal" class="close">&times;</span> <!-- Kapatma butonu -->
+          <h2>KVKK Aydınlatma Metni</h2>
+          <p>
+            Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında
+            veri işleme faaliyetlerimizi, veri sorumlusu bilgilerini, işlenen verileri,
+            işleme amaçlarını, veri sahiplerinin haklarını ve diğer ilgili hususları içerir.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <!-- Stripe.js kütüphanesini ekle -->
     <script src="https://js.stripe.com/v3/"></script>
     <script src="assets/front/js/checkout.js"></script> <!-- Harici JS dosyası -->
 </body>

@@ -17,7 +17,6 @@ cardElement.on('change', function(event) {
         cardErrors.textContent = '';
     }
 });
-
 // Modal açma ve kapatma işlevleri
 const modal = document.getElementById('kvkk-modal');
 const kvkkLink = document.getElementById('kvkk-link');
