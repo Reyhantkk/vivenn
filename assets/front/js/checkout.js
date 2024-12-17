@@ -78,20 +78,24 @@ form.addEventListener('submit', function(event) {
 });
 
 // Stripe token'i ile sunucuya POST isteği gönder
-function handleStripeToken(token) {
+// Token'ı sunucuya gönderme işlemi
+function sendTokenToServer(token) {
     fetch('/charge', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ token: token.id })
-    }).then(response => response.json())
-      .then(data => {
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: token })
+    })
+    .then(response => response.json())
+    .then(data => {
         if (data.success) {
             alert('Ödeme başarılı!');
             window.location.href = '/success';
         } else {
-            alert('Ödeme işlemi başarısız oldu. Lütfen tekrar deneyin.');
+            alert('Ödeme başarısız: ' + data.error);
         }
+    })
+    .catch(error => {
+        console.error('Sunucu Hatası:', error);
+        alert('Bir hata oluştu, lütfen tekrar deneyin.');
     });
 }
