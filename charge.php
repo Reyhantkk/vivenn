@@ -1,40 +1,46 @@
 <?php
-require_once('vendor/autoload.php'); // Composer kullanıyorsanız bu satır gereklidir
-\Stripe\Stripe::setApiKey('sk_test_YOUR_SECRET_KEY'); // Stripe Secret Key
-
 header('Content-Type: application/json');
 
-// Tarayıcıdan gelen JSON verisini alın
-$input = json_decode(file_get_contents('php://input'), true);
+$merchant_id = 'YOUR_MERCHANT_ID';
+$merchant_key = 'YOUR_MERCHANT_KEY';
+$merchant_salt = 'YOUR_MERCHANT_SALT';
+$email = 'test@domain.com';
+$payment_amount = 100; // Örnek tutar (Kuruş cinsinden)
+$currency = "TRY";
 
-if (isset($input['token'])) {
-    $token = $input['token'];
+// Hash oluştur
+$hash_str = $merchant_id . $email . $payment_amount . $merchant_salt;
+$paytr_token = base64_encode(hash_hmac('sha256', $hash_str, $merchant_key, true));
 
-    try {
-        // Stripe ile ödeme işlemi başlat
-        $charge = \Stripe\Charge::create([
-            'amount' => 5000, // Ödeme tutarı kuruş cinsinden (50 TL = 5000)
-            'currency' => 'try',
-            'source' => $token, // Tarayıcıdan gelen token
-            'description' => 'Ödeme işlemi PHP ile'
-        ]);
+$post_data = [
+    'merchant_id' => $merchant_id,
+    'email' => $email,
+    'payment_amount' => $payment_amount,
+    'paytr_token' => $paytr_token,
+    'currency' => $currency,
+    'success_url' => 'https://www.yourwebsite.com/success',
+    'fail_url' => 'https://www.yourwebsite.com/fail'
+];
 
-        // MySQL veritabanına başarılı işlemi kaydet
-        $mysqli = new mysqli('localhost', 'root', '', 'stripe_db'); // Veritabanı bilgilerinizi ayarlayın
-        if ($mysqli->connect_error) {
-            die("Veritabanı bağlantı hatası: " . $mysqli->connect_error);
-        }
+// PayTR sunucusuna istek gönder
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://www.paytr.com/odeme/api");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post_data));
 
-        $stmt = $mysqli->prepare("INSERT INTO payments (amount, currency, description, stripe_charge_id) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("isss", $charge->amount, $charge->currency, $charge->description, $charge->id);
-        $stmt->execute();
+$result = curl_exec($ch);
+curl_close($ch);
 
-        echo json_encode(['success' => true]);
-    } catch (\Stripe\Exception\ApiErrorException $e) {
-        // Stripe hatası
-        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
-    }
+if ($result) {
+    echo json_encode([
+        'status' => 'success',
+        'iframe_url' => $result
+    ]);
 } else {
-    echo json_encode(['success' => false, 'error' => 'Token bulunamadı.']);
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'PayTR isteği başarısız oldu.'
+    ]);
 }
 ?>

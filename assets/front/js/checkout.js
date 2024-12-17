@@ -1,3 +1,4 @@
+
 // Stripe API Anahtarınızı burada tanımlayın
 const stripe = Stripe('STRIPE_PUBLIC_KEY'); // Buraya kendi Stripe Public Key'inizi koymalısınız
 const elements = stripe.elements();
@@ -17,6 +18,53 @@ cardElement.on('change', function(event) {
         cardErrors.textContent = '';
     }
 });
+const kvkkCheckbox = document.getElementById('kvkk-checkbox');
+const submitButton = document.getElementById('submit-button');
+
+// KVKK kutusu işaretlenmeden buton devre dışı
+kvkkCheckbox.addEventListener('change', function() {
+    submitButton.disabled = !kvkkCheckbox.checked;
+});
+
+// Form Gönderimi
+const form = document.getElementById('payment-form');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    if (!kvkkCheckbox.checked) {
+        alert('Lütfen KVKK Aydınlatma Metnini onaylayın.');
+        return;
+    }
+
+    // Stripe ile token oluştur ve işlemi başlat
+    stripe.createToken(cardElement).then(function(result) {
+        if (result.error) {
+            document.getElementById('card-errors').textContent = result.error.message;
+        } else {
+            handleStripeToken(result.token);
+        }
+    });
+});
+
+// Stripe token'i sunucuya gönderme
+function handleStripeToken(token) {
+    fetch('charge.php', { 
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: token.id })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Ödeme başarılı!');
+            window.location.href = '/success';
+        } else {
+            alert('Ödeme başarısız: ' + data.error);
+        }
+    });
+
+
+
 
 // Modal açma ve kapatma işlevleri
 const modal = document.getElementById('kvkk-modal');
@@ -97,4 +145,6 @@ function handleStripeToken(token) {
         console.error('Sunucu Hatası:', error);
         alert('Bir hata oluştu, lütfen tekrar deneyin.');
     });
+}
+
 }
