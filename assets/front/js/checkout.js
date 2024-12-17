@@ -17,6 +17,7 @@ cardElement.on('change', function(event) {
         cardErrors.textContent = '';
     }
 });
+
 // Modal açma ve kapatma işlevleri
 const modal = document.getElementById('kvkk-modal');
 const kvkkLink = document.getElementById('kvkk-link');
@@ -24,7 +25,7 @@ const closeModal = document.getElementById('close-modal');
 
 // Kullanıcı KVKK linkine tıklayınca modal açılır
 kvkkLink.addEventListener('click', function(event) {
-    event.preventDefault(); // Sayfa yenilemeyi engelle
+    event.preventDefault();
     modal.style.display = 'block';
 });
 
@@ -40,6 +41,20 @@ window.addEventListener('click', function(event) {
     }
 });
 
+// KVKK kutucuğu kontrolü ve buton devre dışı bırakma
+const kvkkCheckbox = document.getElementById('kvkk-checkbox');
+const submitButton = document.getElementById('submit-button');
+
+// Sayfa yüklendiğinde butonu devre dışı bırak
+window.addEventListener('load', function() {
+    submitButton.disabled = true;
+});
+
+// KVKK checkbox durumuna göre butonu etkinleştir
+kvkkCheckbox.addEventListener('change', function() {
+    submitButton.disabled = !kvkkCheckbox.checked;
+});
+
 // Form gönderim işlemi
 const form = document.getElementById('payment-form');
 
@@ -47,42 +62,34 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
 
     // KVKK checkbox kontrolü
-    const kvkkCheckbox = document.getElementById('kvkk-checkbox');
     if (!kvkkCheckbox.checked) {
         alert('Lütfen KVKK Aydınlatma Metnini okuyup onayladığınıza dair kutucuğu işaretleyin.');
-        return; // İşleme devam etmeyin
+        return;
     }
 
     // Ödeme bilgilerini Stripe'a gönder
     stripe.createToken(cardElement).then(function(result) {
         if (result.error) {
-            // Hata varsa kullanıcıya göster
             cardErrors.textContent = result.error.message;
         } else {
-            // Stripe token'i ile sunucuya gönderilecek formu işleyin
             handleStripeToken(result.token);
         }
     });
 });
 
-
 // Stripe token'i ile sunucuya POST isteği gönder
 function handleStripeToken(token) {
-    // Tokeni sunucuya gönderme işlemi
     fetch('/charge', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            token: token.id
-        })
-    }).then(response => {
-        return response.json();
-    }).then(data => {
+        body: JSON.stringify({ token: token.id })
+    }).then(response => response.json())
+      .then(data => {
         if (data.success) {
             alert('Ödeme başarılı!');
-            window.location.href = '/success';  // Başarılı sayfasına yönlendirin
+            window.location.href = '/success';
         } else {
             alert('Ödeme işlemi başarısız oldu. Lütfen tekrar deneyin.');
         }
